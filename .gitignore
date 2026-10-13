@@ -1,0 +1,87 @@
+# ==========================================
+# Prerequisites & Core Build Artifacts
+# ==========================================
+*.d
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic and Static Libraries
+*.so
+*.dylib
+*.dll
+*.la
+*.lai
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# ==========================================
+# Build Directories & Toolchains
+# ==========================================
+# Generic build directory names
+[Bb]uild/
+[Oo]ut/
+
+# CMake output and caches
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+CMakeWin32/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+CMakeUserPresets.json
+
+# Visual Studio / MSBuild artifacts
+.vs/
+Debug/
+Release/
+x64/
+x86/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Xcode artifacts
+*.mode1v3
+*.mode2v3
+*.storyboardc
+*.pbxuser
+*.perspectivev3
+
+# CLion / JetBrains artifacts
+.idea/
+cmake-build-*/
+
+# VS Code settings
+.vscode/
+
+# ==========================================
+# Package Managers & Dependencies
+# ==========================================
+vcpkg_installed/
+.conan/
+
+# ==========================================
+# Backup and System Files
+# ==========================================
+*.tmp
+*.log
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
