@@ -1,0 +1,4 @@
+material1,material2,restitution,staticFriction,dynamicFriction,rollingFriction
+Powder,Powder,0.7,0.4,0.3,0.01
+Powder,Steel,0.6,0.5,0.35,0.02
+Steel,Steel,0.8,0.5,0.3,0.01
