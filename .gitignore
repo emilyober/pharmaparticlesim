@@ -85,3 +85,20 @@ vcpkg_installed/
 *~
 .DS_Store
 Thumbs.db
+
+# Additional build directories
+/build-*/
+/.venv/
+
+# Compiled analysis tool
+/mixing
+
+# Generated experiment output
+/experiments/results/
+/*.csv
+!/materials.csv
+!/contacts.csv
+/profile.txt
+
+# LAMMPS trajectories
+*.lammpstrj

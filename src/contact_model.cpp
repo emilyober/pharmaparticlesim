@@ -18,28 +18,16 @@ namespace {
         return (r1 * r2) / (r1 + r2);
     }
     ContactParameters calculateParameters(
-        const Material& m1, 
-        const Material& m2, 
-        const ContactProperties& contactProps,
+        const MaterialPairProperties& pair,
         double effectiveMass,
         double effectiveRadius,
         double overlap
     ) {
-        const double e1 = m1.youngModulus;
-        const double e2 = m2.youngModulus;
-        const double v1 = m1.poissonRatio;
-        const double v2 = m2.poissonRatio;
-        const double effectiveE = 1.0 / ((1.0 - v1 * v1) / e1 + (1.0 - v2 * v2) / e2);
-        const double g1 = e1 / (2.0 * (1.0 + v1));
-        const double g2 = e2 / (2.0 * (1.0 + v2));
-        const double effectiveG = 1.0 / ((2.0 - v1) / g1 + (2.0 - v2) / g2);
         const double contactRadius = std::sqrt(effectiveRadius * overlap);
-        const double normalElasticForce = (4.0 / 3.0) * effectiveE * contactRadius * overlap;
-        const double normalStiffness = 2.0 * effectiveE * contactRadius;
-        const double tangentialStiffness = 8.0 * effectiveG * contactRadius;
-        const double ln = std::log(contactProps.restitution);
-        const double dampingRatio = -ln / std::sqrt(PI * PI + ln * ln);
-        const double normalDamping = 2.0 * std::sqrt(5.0/6.0) * dampingRatio * std::sqrt(effectiveMass * normalStiffness);
+        const double normalElasticForce = (4.0 / 3.0) * pair.effectiveYoungModulus * contactRadius * overlap;
+        const double normalStiffness = 2.0 * pair.effectiveYoungModulus * contactRadius;
+        const double tangentialStiffness = 8.0 * pair.effectiveShearModulus * contactRadius;
+        const double normalDamping = 2.0 * std::sqrt(5.0/6.0) * pair.dampingRatio * std::sqrt(effectiveMass * normalStiffness);
         const double tangentialDamping = normalDamping; //assuming same damping for tangential
         return {normalElasticForce, normalDamping, tangentialStiffness, tangentialDamping};
     }
@@ -53,7 +41,7 @@ namespace {
         double dt
     ) {
         constexpr double displacementTolerance = 1e-14;
-        constexpr double slipSpeedTolerance = 1e-8;
+
         if (normalForce <= 0.0) {
             contactState.tangentialDisplacement = {};
             contactState.sliding = false;
@@ -73,22 +61,12 @@ namespace {
         const double ct = params.tangentialDamping;
         const Vec3D trialForce = -kt * displacement - ct * tangentialVelocity;
         const double trialMagnitude = norm(trialForce);
-        const double slipSpeed = norm(tangentialVelocity);
-        const double staticLimit = props.staticFriction * normalForce;
-        const double dynamicLimit = props.dynamicFriction * normalForce;
-        const bool canStick = trialMagnitude <= staticLimit && (!contactState.sliding || slipSpeed <= slipSpeedTolerance);
-        Vec3D tangentialForce;
-        if (canStick) {
-            tangentialForce = trialForce;
-            contactState.sliding = false;
-        } else {
-            contactState.sliding = true;
-            if (slipSpeed > slipSpeedTolerance) {
-                tangentialForce = tangentialVelocity * (-dynamicLimit / slipSpeed);
-            } else if (trialMagnitude > 0.0) {
-                tangentialForce = trialForce * (dynamicLimit / trialMagnitude);
-            }
-            displacement = (tangentialForce + tangentialVelocity * ct) / -kt;
+        const double frictionLimit = props.staticFriction * normalForce;
+        Vec3D tangentialForce = trialForce;
+        contactState.sliding = trialMagnitude > frictionLimit;
+        if (contactState.sliding){
+            tangentialForce *= frictionLimit / trialMagnitude;
+            displacement = (tangentialForce + tangentialVelocity * ct) / (-kt);
         }
         contactState.tangentialDisplacement = displacement;
         contactState.previousNormal = normal;
@@ -113,16 +91,15 @@ void ContactModel::resolveContact(
         return; //avoid singularity
     }
     const Vec3D normal = separation / distance;
-    const Material& m1 = materials.getMaterial(p1.material);
-    const Material& m2 = materials.getMaterial(p2.material);
-    const ContactProperties& contactProps = materials.getContactProperties(p1.material, p2.material);
+    const MaterialPairProperties& pair = materials.getPairProperties(p1.material,p2.material);
+    const ContactProperties& contactProps = pair.contact;
     const double effectiveR = effectiveRadius(p1.radius, p2.radius);
     const double effectiveM = effectiveMass(p1.mass, p2.mass);
-    const ContactParameters params = calculateParameters(m1,m2,contactProps,effectiveM,effectiveR,overlap);
+    const ContactParameters params = calculateParameters(pair,effectiveM,effectiveR,overlap);
     const Vec3D r1 = normal*(p1.radius - overlap/2.0);
     const Vec3D r2 = -normal*(p2.radius - overlap/2.0);
-    const Vec3D v1 = p1.velocity + cross(p1.angularVelocity, r1);
-    const Vec3D v2 = p2.velocity + cross(p2.angularVelocity, r2);
+    const Vec3D v1 = p1.velocity + cross(p1.angularVelocity, normal * p1.radius);
+    const Vec3D v2 = p2.velocity + cross(p2.angularVelocity, normal * (-p2.radius));
     const Vec3D relativeVelocity = v2 - v1;
     const double normalVelocity = dot(relativeVelocity, normal);
     const Vec3D tangentialVelocity = relativeVelocity - normal * normalVelocity;
@@ -158,12 +135,11 @@ void ContactModel::particleWall(
     if (overlap <= 0.0) {
         return; //no contact
     }
-    const Material& particleMaterial = materials.getMaterial(p.material);
-    const Material& wallMaterial = materials.getMaterial(wall.material);
-    const ContactProperties& contactProps = materials.getContactProperties(p.material, wall.material);
+    const MaterialPairProperties& pair = materials.getPairProperties(p.material, wall.material);
+    const ContactProperties& contactProps = pair.contact;
     const double effectiveR = p.radius;
     const double effectiveM = p.mass;
-    const ContactParameters params = calculateParameters(particleMaterial, wallMaterial, contactProps, effectiveM, effectiveR, overlap);
+    const ContactParameters params = calculateParameters(pair, effectiveM, effectiveR, overlap);
     const Vec3D r = normal * (-p.radius);
     const Vec3D surfaceV = p.velocity + cross(p.angularVelocity, r);
     const Vec3D wallContactPoint = p.position - normal*distance;
@@ -205,12 +181,12 @@ void ContactModel::particleCylinder(
     }
     const Vec3D outward = radialOffset / radialDistance;
     const Vec3D normal = outward * -1.0;
-    const Material& particleMaterial = materials.getMaterial(particle.material);
-    const Material& wallMaterial = materials.getMaterial(wall.material);
-    const ContactProperties& properties = materials.getContactProperties(particle.material, wall.material);
+    const MaterialPairProperties& pair =
+    materials.getPairProperties(particle.material, wall.material);
+    const ContactProperties& properties = pair.contact;
     const double effectiveR = particle.radius;
     const double effectiveM = particle.mass;
-    const ContactParameters parameters = calculateParameters(particleMaterial,wallMaterial,properties,effectiveM,effectiveR,overlap);
+    const ContactParameters parameters = calculateParameters(pair,effectiveM,effectiveR,overlap);
     const Vec3D leverArm = outward*particle.radius;
     const Vec3D particleSurfaceVelocity = particle.velocity + cross(particle.angularVelocity, leverArm);
     const Vec3D wallOmega = axis * wall.angularSpeed;

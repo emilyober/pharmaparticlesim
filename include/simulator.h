@@ -45,6 +45,6 @@ class Simulator {
         std::size_t stepIndex_{0};
         Vec3D gravity_{0.0, 0.0, -9.81};
         double dt_{5e-6};
-        double endTime_{0.1};
-        std::size_t outputEvery_{1};
+        double endTime_{1.0};
+        std::size_t outputEvery_{200};
 };

@@ -1,0 +1,7 @@
+stage,particles,simulated_seconds,timestep_seconds,wall_seconds
+release_initial,322,0.1,0.000005,2.640
+release_initial,690,0.1,0.000005,6.690
+release_initial,1426,0.1,0.000005,19.045
+material_cache,322,0.1,0.000005,2.630
+neighbor_lookup_reuse,322,0.1,0.000005,2.496
+squared_distance_rejection,322,0.1,0.000005,2.489
