@@ -1,0 +1,4 @@
+measurement,minimum_ns_per_contact,median_ns_per_contact,maximum_ns_per_contact,notes
+full_evaluator_run1,14.65789413,15.46823978,21.1814642,initial measurement
+full_evaluator_run2,14.615098,14.72167206,27.87856197,radius helper validation passed
+radius_only_run1,5.010565758,5.024233818,16.50377083,helper in benchmark source; compiler optimization differs; preliminaryradius_separate_source_run1,7.190465927,7.344921112,9.920557022,separately compiled; radius validation passed

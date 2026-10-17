@@ -1,0 +1,36 @@
+clear
+units si
+atom_style sphere
+boundary f f f
+newton off
+
+region box block -0.01 0.01 -0.01 0.01 -0.01 0.01
+create_box 1 box
+
+create_atoms 1 single 0 0 0
+create_atoms 1 single 0.001999 0 0
+
+set group all diameter 0.002
+set group all density 1500
+
+comm_modify vel yes
+
+pair_style granular
+pair_coeff * * jkr 1875000.0 0.0 0.25 0.05 &
+    tangential linear_nohistory 0.0 0.0 &
+    damping velocity &
+    rolling none &
+    twisting none
+
+neighbor 0.0002 bin
+neigh_modify delay 0 every 1 check yes
+
+group moving id 2
+fix prescribed moving move linear 0.001 0.0 0.0 units box
+timestep 0.000005
+
+dump pull all custom 100 verification/jkr_pull_apart.lammpstrj &
+    id x y z fx fy fz
+dump_modify pull sort id format float %.17g
+
+run 600
