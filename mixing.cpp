@@ -7,6 +7,7 @@
 #include <string>
 #include <tuple>
 #include <vector>
+#include <iomanip>
 
 struct Counts {
     int total{0};
@@ -17,16 +18,16 @@ using Cell = std::tuple<int, int, int>;
 
 int main() {
     try {
-        std::ifstream input("drum_mixing.csv");
-
+        std::ifstream input("experiments/results/local_timestepping/pilot_10rpm_6s.csv");
         if (!input) {
             throw std::runtime_error(
                 "Cannot open drum_mixing.csv"
             );
         }
 
-        std::ofstream output("mixing_score.csv");
-
+        std::ofstream output("experiments/results/local_timestepping/pilot_10rpm_6s_mixing.csv");
+        
+        output << std::setprecision(17);
         if (!output) {
             throw std::runtime_error(
                 "Cannot create mixing_score.csv"

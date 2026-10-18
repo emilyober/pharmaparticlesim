@@ -320,6 +320,23 @@ void Simulator::writeOutput(
     }
 }
 
+void Simulator::addRecordingWindow(std::size_t firstStep, std::size_t lastStep) {
+    if (firstStep > lastStep) {
+        throw std::invalid_argument("recodring window invalid.");
+    }
+    recordingWindows_.emplace_back(firstStep,lastStep);
+}
+
+void Simulator::setDuration(double duration) {
+    if (!std::isfinite(duration) || duration <= 0.0) {
+        throw std::invalid_argument(
+            "simulation duration must be finite and positive."
+        );
+    }
+
+    endTime_ = duration;
+}
+
 void Simulator::run(
     const std::string& outputFilename
 ) {
@@ -349,19 +366,32 @@ void Simulator::run(
         stepIndex_,
         static_cast<double>(stepIndex_) * dt_
     );
-    double elapsedTime = 0.0;
-    while (elapsedTime < endTime_){
+    const auto totalSteps = static_cast<std::size_t>(std::llround(endTime_ / dt_));
+
+    if (totalSteps == 0) {
+        throw std::invalid_argument("Duration must cover at least one simulation timestep.");
+    }
+
+    for (std::size_t iteration = 0; iteration < totalSteps; ++iteration) {
         ++stepIndex_;
         resetForces();
         computeContacts();
         integrate();
 
-        elapsedTime += dt_;
 
         const double time = static_cast<double>(stepIndex_)*dt_;
-        if (stepIndex_ % outputEvery_ == 0 || elapsedTime >= endTime_){
-            writeOutput(file,stepIndex_,time);
-       
+        bool denseRecording = false;
+
+        for (const auto& [firstStep, lastStep] : recordingWindows_) {
+            if (stepIndex_ >= firstStep && stepIndex_ <= lastStep) {
+                denseRecording = true;
+                break;
+            }
+        }
+
+        if (denseRecording || stepIndex_ % outputEvery_ == 0 || iteration + 1 == totalSteps) {
+                writeOutput(file,stepIndex_,time);
+        
         }
     }
     file.flush();
