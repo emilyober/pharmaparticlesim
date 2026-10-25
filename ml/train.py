@@ -3,23 +3,20 @@ from torch import nn
 from torch.utils.data import DataLoader, Subset
 from data import ParticleDataset, collate_particles
 from pathlib import Path
-from sklearn.model_selection import train_test_split
 from model import NeighborhoodMLP
+from physics import gravity_changes
 
-csv_path = (Path(__file__).resolve().parent.parent / "experiments/results/local_timestepping/pilot_10rpm.csv")
-dataset = ParticleDataset(csv_path, horizon=10)
-start_frames = range(dataset.num_frames - dataset.horizon)
-train_frames, val_frames = train_test_split(start_frames,test_size=0.2,shuffle=False,)
-
-#remove training examples where the future state is in validation
-val_start = val_frames[0]
-train_frames = [frame for frame in train_frames if frame + dataset.horizon < val_start]
-num = dataset.num_particle
-train_dataset = Subset(dataset, range(train_frames[0]*num,(train_frames[-1]+1)*num))
+results_dir = (Path(__file__).resolve().parent.parent/ "experiments/results/local_timestepping")
+dataset = ParticleDataset(results_dir / "pilot_seed42_10rpm_0p1s_dense.csv",horizon=10)
+#fixed 100,000-example val subset.
+validation_dataset = ParticleDataset(results_dir / "pilot_seed43_10rpm_0p1s_dense.csv",horizon=10,)
+val_generator = torch.Generator().manual_seed(43)
+val_indices = torch.randperm(len(validation_dataset), generator=val_generator)[:100_000].tolist()
+validation_dataset = Subset(validation_dataset, val_indices)
+#fixed 100,000-example training subset.
 generator = torch.Generator().manual_seed(42)
-indices = torch.randperm(len(train_dataset), generator=generator)[:100_000].tolist()
-train_dataset = Subset(train_dataset, indices)
-validation_dataset = Subset(dataset,range(val_frames[0]*num,(val_frames[-1]+1)*num))
+indices = torch.randperm(len(dataset), generator=generator)[:100_000].tolist()
+train_dataset = Subset(dataset, indices)
 train_loader = DataLoader(train_dataset,batch_size=256,shuffle=True,num_workers=0,collate_fn=collate_particles,)
 validation_loader = DataLoader(validation_dataset,batch_size=256,shuffle=False,num_workers=0,collate_fn=collate_particles,)
 
@@ -63,20 +60,37 @@ target_mean, target_std = target_mean.float(), target_std.float()
 
 #training + eval loop
 loss_fn = nn.MSELoss()
-torch.manual_seed(42)
+torch.manual_seed(123)
 model = NeighborhoodMLP()
 nn.init.zeros_(model.predictor[-1].weight)
 nn.init.zeros_(model.predictor[-1].bias)
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
-for epoch in range(5):
+checkpoint_dir = Path(__file__).resolve().parent.parent / "experiments/ml_runs"
+checkpoint_dir.mkdir(parents=True, exist_ok=True)
+best_val_loss = float("inf")
+# checkpoint = torch.load(checkpoint_dir / "seed42_to43_best.pt",map_location="cpu",weights_only=True,)
+# model.load_state_dict(checkpoint["model_state"])
+# optimizer.load_state_dict(checkpoint["optimizer_state"])
+# input_mean = checkpoint["input_mean"]
+# input_std = checkpoint["input_std"]
+# neighbor_mean = checkpoint["neicheckpoint = ghbor_mean"]
+# neighbor_std = checkpoint["neighbor_std"]
+# target_mean = checkpoint["target_mean"]
+# target_std = checkpoint["target_std"]
+
+# best_val_loss = checkpoint["best_val_loss"]
+# start_epoch = checkpoint["epoch"]
+
+# torch.set_rng_state(checkpoint["torch_rng_state"])
+start_epoch = 0
+for epoch in range(start_epoch,start_epoch+20):
     model.train()
     train_loss = 0.0
     train_count = 0
     for inputs,neighbors,mask,targets,contacts in train_loader:
-        changes = torch.zeros_like(targets)
-        changes[:, :3] = inputs[:, 3:6] * dataset.horizon * 5e-6
+        changes = gravity_changes(inputs, dataset.horizon)
         baseline_predictions = (changes - target_mean) / target_std
-
+    
         inputs = (inputs - input_mean) / input_std
         neighbors = (neighbors - neighbor_mean) / neighbor_std
         targets = (targets - target_mean) / target_std
@@ -103,11 +117,12 @@ for epoch in range(5):
             changes = torch.zeros_like(targets)
             changes[:, :3] = inputs[:, 3:6] * dataset.horizon * 5e-6
             baseline_predictions = (changes - target_mean) / target_std
+            gravity_prediction = (gravity_changes(inputs, dataset.horizon) - target_mean) / target_std
             inputs = (inputs-input_mean)/input_std
             neighbors = (neighbors - neighbor_mean) / neighbor_std
             targets = (targets - target_mean)/target_std
             corrections = model(inputs, neighbors, mask)
-            predictions = baseline_predictions + corrections
+            predictions = gravity_prediction + corrections
             model_errors = (predictions - targets).square().mean(dim=1)
             baseline_errors = (baseline_predictions - targets).square().mean(dim=1)
             for group in [0, 1]:
@@ -124,6 +139,31 @@ for epoch in range(5):
                 squared_error[:, 3:6].mean(),
                 squared_error[:, 6:9].mean(),
             ]) * inputs.shape[0]
+    current_val_loss = val_loss / val_count
+
+    if current_val_loss < best_val_loss:
+        best_val_loss = current_val_loss
+
+        torch.save({
+            "epoch": epoch + 1,
+            "model_state": model.state_dict(),
+            "optimizer_state": optimizer.state_dict(),
+            "best_val_loss": best_val_loss,
+            "input_mean": input_mean,
+            "input_std": input_std,
+            "neighbor_mean": neighbor_mean,
+            "neighbor_std": neighbor_std,
+            "target_mean": target_mean,
+            "target_std": target_std,
+            "horizon": dataset.horizon,
+            "train_indices": indices,
+            "baseline_type": "gravity",
+            "dem_dt": 5e-6,
+            "validation_indices": val_indices,
+            "torch_rng_state": torch.get_rng_state(),
+        }, checkpoint_dir / "seed42_to43_gravity_modelseed123_best.pt")
+
+        print("Saved best checkpoint")
     for group, label in enumerate(["No particle contact", "Particle contact"]):
         count = int(group_counts[group].item())
 
@@ -142,29 +182,31 @@ for epoch in range(5):
     print("Position / velocity / spin:", component_error / val_count)
 
 
-baseline_loss = 0.0
-component_error = torch.zeros(3)
-count = 0
-prediction_dt = dataset.horizon * 5e-6
+for name in ["Constant velocity", "Gravity only"]:
+    component_error = torch.zeros(3)
+    count = 0
 
-with torch.no_grad():
-    for inputs, neighbors, mask, targets, contacts in validation_loader:
-        changes = torch.zeros_like(targets)
-        changes[:, :3] = inputs[:, 3:6] * prediction_dt
+    with torch.no_grad():
+        for inputs, neighbors, mask, targets, contacts in validation_loader:
+            if name == "Gravity only":
+                changes = gravity_changes(inputs, dataset.horizon)
+            else:
+                changes = torch.zeros_like(targets)
+                changes[:, :3] = (
+                    inputs[:, 3:6] * dataset.horizon * 5e-6
+                )
 
-        predictions = (changes - target_mean) / target_std
-        targets = (targets - target_mean) / target_std
+            squared_error = ((changes - targets) / target_std).square()
 
-        batch_size = inputs.shape[0]
-        loss = loss_fn(predictions, targets)
-        baseline_loss += loss.item() * inputs.shape[0]
-        squared_error = (predictions - targets).square()
-        component_error += torch.stack([
-            squared_error[:, :3].mean(),
-            squared_error[:, 3:6].mean(),
-            squared_error[:, 6:9].mean(),
-        ]) * batch_size
-        count += batch_size
+            component_error += torch.stack([
+                squared_error[:, :3].sum(),
+                squared_error[:, 3:6].sum(),
+                squared_error[:, 6:9].sum(),
+            ])
 
-print(f"Constant-velocity validation loss: {baseline_loss / count:.6f}")
-print("Position / velocity / spin:", component_error / count)
+            count += inputs.shape[0]
+
+    errors = component_error / (count * 3)
+
+    print(f"{name} validation loss: {errors.mean().item():.6f}")
+    print("Position / velocity / spin:", errors)

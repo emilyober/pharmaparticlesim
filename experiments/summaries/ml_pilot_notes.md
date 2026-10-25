@@ -150,3 +150,12 @@ Step 2000: loss=0.001980
 - No independent-run test, autonomous rollout, mixing-fidelity
   evaluation, or runtime/speedup benchmark has been completed.
 - These results do not establish whether ML acceleration is viable.
+
+Analytical-gravity residual experiment:
+With unchanged datasets, subsets, architecture, training seed 123,
+and a 20-epoch budget, best validation MSE was 0.637959 at epoch 18.
+Constant-velocity baseline: 0.680956.
+Gravity-only baseline: 0.683283.
+Previous constant-velocity residual model: 0.636835.
+Analytical gravity produced no clear aggregate prediction improvement.
+Its effect on autonomous rollout penetration has not yet been tested.
