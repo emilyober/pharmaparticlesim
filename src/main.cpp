@@ -46,7 +46,7 @@ int main(){
 
         const double spacing = 0.0022;
         const double usableRadius =drumRadius - particleRadius - 0.0001;
-        std::mt19937 generator(42);
+        std::mt19937 generator(43);
         std::uniform_real_distribution<double> offset(-0.00002, 0.00002);
         for (int i = -6; i < 6; ++i) {
             for (int j = -3; j <= 3; ++j) {
@@ -78,10 +78,8 @@ int main(){
 
         // Record every timestep during the final 1 ms
         // before 1, 3, and 6 seconds.
-        simulator.addRecordingWindow(199800, 200000);
-        simulator.addRecordingWindow(599800, 600000);
-        simulator.addRecordingWindow(1199800, 1200000);
-        simulator.run("experiments/results/local_timestepping/pilot_jitter_10rpm_0p1s.csv");
+        simulator.addRecordingWindow(0, 20000);
+        simulator.run("experiments/results/local_timestepping/pilot_seed43_10rpm_0p1s_dense.csv");
         std::cout
             << "Output saved to drum_mixing.csv\n";
     } catch (const std::exception& error) {
