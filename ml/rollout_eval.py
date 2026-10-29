@@ -11,6 +11,14 @@ def maximum_overlaps(state,radii):
     return torch.stack([pair_overlap,wall_overlap])
 
 @torch.no_grad()
+def reference_overlap_peak(dataset, radii, start, steps):
+    stop = start + steps * dataset.horizon
+    if start < 0 or stop >= dataset.num_frames:
+        raise ValueError("Reference window exceeds available data")
+
+    return torch.stack([maximum_overlaps(frame, radii) for frame in dataset.states[start:stop + 1]]).amax(dim=0)
+
+@torch.no_grad()
 def evaluate_rollouts(model,dataset,loss_scale,starts,steps=50,overlap_factor=2.0):
     was_training = model.training
     model.eval()
@@ -21,7 +29,7 @@ def evaluate_rollouts(model,dataset,loss_scale,starts,steps=50,overlap_factor=2.
             if (start < horizon or start + steps * horizon >= dataset.num_frames):
                 raise ValueError("rollout window exceeds available data")
             reference = dataset.states[start:start + steps * horizon + 1:horizon]
-            reference_peak = torch.stack([maximum_overlaps(frame,model.radii) for frame in reference]).amax(dim=0)
+            reference_peak = reference_overlap_peak(dataset,model.radii,start,steps)
             limits = (overlap_factor*reference_peak).clamp_min(1e-6)
             previous = dataset.states[start-horizon].clone()
             state = reference[0].clone()

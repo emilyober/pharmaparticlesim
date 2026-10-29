@@ -71,8 +71,8 @@ def build_wall_ghosts(state,previous_state,radii,margin=0.0005):
         selected = torch.where(gaps[wall_id] <= margin)[0]
         owners.append(selected)
         wall_ids.append(torch.full_like(selected,wall_id))
-        current_ghosts.append(ghost_state(positions,current_points[wall_id],wall_id)[selected])
-        previous_ghosts.append(ghost_state(previous_positions,previous_points[wall_id],wall_id)[selected])
+        current_ghosts.append(ghost_state(positions[selected], current_points[wall_id][selected], wall_id))
+        previous_ghosts.append(ghost_state(previous_positions[selected],previous_points[wall_id][selected],wall_id))
         selected_gaps.append(gaps[wall_id][selected])
     return {
         "owners": torch.cat(owners),

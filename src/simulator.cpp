@@ -5,6 +5,8 @@
 #include <stdexcept>
 #include <limits>
 #include <array>
+#include <chrono>
+#include <iostream>
 
 namespace {
     constexpr double PI = 3.1415926535897932;
@@ -371,13 +373,26 @@ void Simulator::run(
     if (totalSteps == 0) {
         throw std::invalid_argument("Duration must cover at least one simulation timestep.");
     }
-
+    using Clock = std::chrono::steady_clock;
+    Clock::time_point benchmarkStart;
     for (std::size_t iteration = 0; iteration < totalSteps; ++iteration) {
+        const bool benchmarkStep = stepIndex_ >= 6000 && stepIndex_ < 8000;
+        if (stepIndex_ == 6000) {
+            benchmarkStart = Clock::now();
+        }
         ++stepIndex_;
         resetForces();
         computeContacts();
         integrate();
+        if (stepIndex_ == 8000) {
+            const auto benchmarkEnd = Clock::now();
+            const double seconds = std::chrono::duration<double>(
+                benchmarkEnd - benchmarkStart
+            ).count();
 
+            std::cout << std::setprecision(10)
+                    << "DEM benchmark seconds: " << seconds << '\n';
+        }
 
         const double time = static_cast<double>(stepIndex_)*dt_;
         bool denseRecording = false;
@@ -389,9 +404,8 @@ void Simulator::run(
             }
         }
 
-        if (denseRecording || stepIndex_ % outputEvery_ == 0 || iteration + 1 == totalSteps) {
-                writeOutput(file,stepIndex_,time);
-        
+        if (!benchmarkStep && (denseRecording || stepIndex_ % outputEvery_ == 0 || iteration + 1 == totalSteps)) {
+            writeOutput(file, stepIndex_, time);
         }
     }
     file.flush();
