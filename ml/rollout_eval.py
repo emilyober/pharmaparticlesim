@@ -19,7 +19,7 @@ def reference_overlap_peak(dataset, radii, start, steps):
     return torch.stack([maximum_overlaps(frame, radii) for frame in dataset.states[start:stop + 1]]).amax(dim=0)
 
 @torch.no_grad()
-def evaluate_rollouts(model,dataset,loss_scale,starts,steps=50,overlap_factor=2.0):
+def evaluate_rollouts(model,dataset,loss_scale,starts,steps=50,overlap_factor=2.0, use_memory=False, reset_memory_each_step=False,):
     was_training = model.training
     model.eval()
     reports = []
@@ -37,8 +37,14 @@ def evaluate_rollouts(model,dataset,loss_scale,starts,steps=50,overlap_factor=2.
             total_error = 0.0
             completed = 0
             failure = None
+            memory = None
             for step in range(1,steps+1):
-                next_state = model(state,previous)
+                if use_memory:
+                    if reset_memory_each_step:
+                        memory = None
+                    next_state, memory = model(state, previous, memory)
+                else:
+                    next_state = model(state, previous)
                 if not torch.isfinite(next_state).all():
                     failure = "nonfinite state"
                     break
