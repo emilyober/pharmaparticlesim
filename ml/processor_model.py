@@ -116,7 +116,7 @@ class ProcessorModel(ParticleInteractionModel):
                 net_spin = (net_spin+wall_net_spin[:num_particles])
             else:
                 wall_memory = torch.zeros_like(wall_memory)
-            state = integrate_state(state,net_linear,net_spin,self.masses,self.inertias,internal_dt)
+            state = integrate_state(state,net_linear,net_spin,self.masses,self.inertias,internal_dt,reference_dt=getattr(self,"integration_reference_dt", None),contact_position_fraction=getattr(self, "contact_position_fraction", 1.0))
         return state
 
 

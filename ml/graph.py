@@ -54,7 +54,7 @@ def build_wall_ghosts(state,previous_state,radii,margin=0.0005):
         else:
             outward[:,1] = 1.0
         signed_distance = ((points - surface_points)*outward).sum(dim=1,keepdim=True)
-        reflected = (points +2.0*signed_distance.abs()*outward)
+        reflected = points - 2.0 * signed_distance * outward
         wall_velocity = torch.cross(omega.expand_as(surface_points),surface_points,dim=1)
         return torch.cat([reflected,wall_velocity,omega.expand_as(points)], dim=1)
 

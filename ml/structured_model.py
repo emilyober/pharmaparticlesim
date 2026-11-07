@@ -16,7 +16,7 @@ def aggregate_pair_impulses(positions,pairs,linear_impulses,angular_impulses,app
     net_spin.index_add_(0,j,spin_j)
     return net_linear,net_spin
 
-def integrate_state(state,net_linear,net_spin,masses,inertias,step_dt):
+def integrate_state(state,net_linear,net_spin,masses,inertias,step_dt,reference_dt=None, contact_position_fraction=1.0):
     gravity = state.new_tensor([0.0, 0.0, -9.81])
     positions = state[:, :3]
     velocities = state[:, 3:6]
@@ -24,6 +24,9 @@ def integrate_state(state,net_linear,net_spin,masses,inertias,step_dt):
     new_velocities = (velocities+gravity*step_dt+net_linear/masses[:,None])
     new_spins = (spins+net_spin/inertias[:,None])
     new_positions = positions+new_velocities*step_dt
+    new_positions = (new_positions - (1.0 - contact_position_fraction) * (net_linear / masses[:, None]) * step_dt)
+    if reference_dt is not None:
+        new_positions = (new_positions - 0.5 * gravity * step_dt * (step_dt - reference_dt));
     return torch.cat([new_positions,new_velocities,new_spins],dim=1)
 
 def normalize_or_zero(vector,eps=1e-8):

@@ -1,0 +1,53 @@
+Epoch 1: train=1.511186, val=0.337556
+Model: loss=0.337556, position/velocity/spin=[0.0005280068726278841, 0.16021215915679932, 0.8519266247749329]
+Constant velocity: loss=0.713220, position/velocity/spin=[0.0007262253202497959, 1.0801957845687866, 1.0587387084960938]
+Gravity only: loss=0.718741, position/velocity/spin=[0.0007372897234745324, 1.0967472791671753, 1.0587387084960938]
+Rollout start=2000: train_rollout8=1.511186, val_one_step=0.337556completed=50/50, failure=None, peak particle/wall µm=[0.0, 0.0]
+Rollout start=6000: train_rollout8=1.511186, val_one_step=0.337556completed=50/50, failure=None, peak particle/wall µm=[55.410541243167565, 32.94145442521088]
+Rollout start=10000: train_rollout8=1.511186, val_one_step=0.337556completed=50/50, failure=None, peak particle/wall µm=[23.53389748413091, 15.360222553596065]
+Rollout start=14000: train_rollout8=1.511186, val_one_step=0.337556completed=50/50, failure=None, peak particle/wall µm=[21.774453992193244, 26.870660204236785]
+Rollout start=18000: train_rollout8=1.511186, val_one_step=0.337556completed=50/50, failure=None, peak particle/wall µm=[26.991024476564085, 15.837125412122843]
+Rollout eligible=True, score=7.9357770850161105
+Saved best screened rollout checkpoint
+Epoch 2: train=1.456031, val=0.360199
+Model: loss=0.360199, position/velocity/spin=[0.0005660621100105345, 0.16754458844661713, 0.9124875664710999]
+Constant velocity: loss=0.713220, position/velocity/spin=[0.0007262253202497959, 1.0801957845687866, 1.0587387084960938]
+Gravity only: loss=0.718741, position/velocity/spin=[0.0007372897234745324, 1.0967472791671753, 1.0587387084960938]
+Rollout start=2000: train_rollout8=1.456031, val_one_step=0.360199completed=50/50, failure=None, peak particle/wall µm=[0.0, 0.0]
+Rollout start=6000: train_rollout8=1.456031, val_one_step=0.360199completed=50/50, failure=None, peak particle/wall µm=[55.410541243167565, 33.91977540843569]
+Rollout start=10000: train_rollout8=1.456031, val_one_step=0.360199completed=50/50, failure=None, peak particle/wall µm=[22.553289495489455, 15.687069406390696]
+Rollout start=14000: train_rollout8=1.456031, val_one_step=0.360199completed=50/50, failure=None, peak particle/wall µm=[20.873986541365774, 28.636043638126385]
+Rollout start=18000: train_rollout8=1.456031, val_one_step=0.360199completed=50/50, failure=None, peak particle/wall µm=[26.361603029476967, 16.71783160418251]
+Rollout eligible=True, score=7.113370014590275
+Saved best screened rollout checkpoint
+Epoch 3: train=1.424114, val=0.362347
+Model: loss=0.362347, position/velocity/spin=[0.000534509657882154, 0.1603575497865677, 0.9261496067047119]
+Constant velocity: loss=0.713220, position/velocity/spin=[0.0007262253202497959, 1.0801957845687866, 1.0587387084960938]
+Gravity only: loss=0.718741, position/velocity/spin=[0.0007372897234745324, 1.0967472791671753, 1.0587387084960938]
+Rollout start=2000: train_rollout8=1.424114, val_one_step=0.362347completed=50/50, failure=None, peak particle/wall µm=[0.0, 0.0]
+Rollout start=6000: train_rollout8=1.424114, val_one_step=0.362347completed=50/50, failure=None, peak particle/wall µm=[55.410541243167565, 33.09109520899245]
+Rollout start=10000: train_rollout8=1.424114, val_one_step=0.362347completed=50/50, failure=None, peak particle/wall µm=[22.887586740695607, 15.30959946110383]
+Rollout start=14000: train_rollout8=1.424114, val_one_step=0.362347completed=50/50, failure=None, peak particle/wall µm=[20.97832533127196, 27.424204648778677]
+Rollout start=18000: train_rollout8=1.424114, val_one_step=0.362347completed=50/50, failure=None, peak particle/wall µm=[26.389486751016157, 16.18045847862938]
+Rollout eligible=True, score=7.158455412280584
+Epoch 4: train=1.394180, val=0.375362
+Model: loss=0.375362, position/velocity/spin=[0.0005641035968437791, 0.16304653882980347, 0.9624751806259155]
+Constant velocity: loss=0.713220, position/velocity/spin=[0.0007262253202497959, 1.0801957845687866, 1.0587387084960938]
+Gravity only: loss=0.718741, position/velocity/spin=[0.0007372897234745324, 1.0967472791671753, 1.0587387084960938]
+Rollout start=2000: train_rollout8=1.394180, val_one_step=0.375362completed=50/50, failure=None, peak particle/wall µm=[0.0, 0.0]
+Rollout start=6000: train_rollout8=1.394180, val_one_step=0.375362completed=50/50, failure=None, peak particle/wall µm=[55.410541243167565, 32.517085286724864]
+Rollout start=10000: train_rollout8=1.394180, val_one_step=0.375362completed=50/50, failure=None, peak particle/wall µm=[22.741128055614457, 14.724664333151672]
+Rollout start=14000: train_rollout8=1.394180, val_one_step=0.375362completed=50/50, failure=None, peak particle/wall µm=[20.396551512137822, 26.361245922125466]
+Rollout start=18000: train_rollout8=1.394180, val_one_step=0.375362completed=50/50, failure=None, peak particle/wall µm=[25.79247365707641, 16.06497447937706]
+Rollout eligible=True, score=6.8376125068890605
+Saved best screened rollout checkpoint
+Epoch 5: train=1.370345, val=0.377179
+Model: loss=0.377179, position/velocity/spin=[0.0005413860199041665, 0.16053234040737152, 0.9704636335372925]
+Constant velocity: loss=0.713220, position/velocity/spin=[0.0007262253202497959, 1.0801957845687866, 1.0587387084960938]
+Gravity only: loss=0.718741, position/velocity/spin=[0.0007372897234745324, 1.0967472791671753, 1.0587387084960938]
+Rollout start=2000: train_rollout8=1.370345, val_one_step=0.377179completed=50/50, failure=None, peak particle/wall µm=[0.0, 0.0]
+Rollout start=6000: train_rollout8=1.370345, val_one_step=0.377179completed=50/50, failure=None, peak particle/wall µm=[55.410541243167565, 32.80756424101084]
+Rollout start=10000: train_rollout8=1.370345, val_one_step=0.377179completed=50/50, failure=None, peak particle/wall µm=[22.71149775902705, 15.089586157340795]
+Rollout start=14000: train_rollout8=1.370345, val_one_step=0.377179completed=50/50, failure=None, peak particle/wall µm=[20.403846877518635, 27.44789876991602]
+Rollout start=18000: train_rollout8=1.370345, val_one_step=0.377179completed=50/50, failure=None, peak particle/wall µm=[25.965590130657205, 16.46637450903633]
+Rollout eligible=True, score=7.011435882910885
