@@ -1,0 +1,21 @@
+Checkpoint epoch: 20
+Dataset: seed 43
+Both modes use the same weights and initial states.
+
+Mode: RETAIN memory
+start=2000, completed=50/50, failure=None, score=4.192663536964888e-07, peak overlaps µm=[0.0, 0.0]
+start=6000, completed=9/50, failure=overlap screening limit exceeded, score=inf, peak overlaps µm=[72.11978719635567, 60.89041591827993]
+start=10000, completed=21/50, failure=overlap screening limit exceeded, score=inf, peak overlaps µm=[50.58426358444789, 33.15476180961937]
+start=14000, completed=22/50, failure=overlap screening limit exceeded, score=inf, peak overlaps µm=[44.52599615089627, 31.881094721967347]
+start=18000, completed=20/50, failure=overlap screening limit exceeded, score=inf, peak overlaps µm=[65.00657514157221, 34.370119683444294]
+Eligible: False
+Overall score: inf
+
+Mode: RESET every prediction
+start=2000, completed=50/50, failure=None, score=4.192663536964888e-07, peak overlaps µm=[0.0, 0.0]
+start=6000, completed=50/50, failure=None, score=32.12638347293642, peak overlaps µm=[55.410541243167565, 32.10509257576058]
+start=10000, completed=50/50, failure=None, score=6.292051468966113, peak overlaps µm=[23.92362272253057, 16.201412350033]
+start=14000, completed=50/50, failure=None, score=7.233706440458883, peak overlaps µm=[24.60396173886584, 20.132442796159943]
+start=18000, completed=50/50, failure=None, score=10.982576532989736, peak overlaps µm=[25.282971780810072, 16.55997718190763]
+Eligible: True
+Overall score: 11.326943666923501

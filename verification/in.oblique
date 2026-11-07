@@ -1,0 +1,54 @@
+#LAMMPS 30 Sep 2026
+#head on collision with identical spheres
+#SI units: metres, kilograms, seconds.
+
+clear
+units si
+dimension 3
+atom_style sphere
+boundary f f f
+newton off
+
+region domain block -0.02 0.02 -0.02 0.02 -0.02 0.02
+create_box 1 domain
+
+create_atoms 1 single -0.0015  0.0005 0.0
+create_atoms 1 single  0.0015 -0.0005 0.0
+
+set group all diameter 0.002
+set group all density 1500.0
+
+group left id 1
+group right id 2
+
+velocity left set  0.05 0.0 0.0
+velocity right set -0.05 0.0 0.0
+
+comm_modify vel yes
+
+pair_style granular
+pair_coeff * * hertz/material 1.0e6 0.7 0.25 &
+    tangential mindlin NULL 1.0 0.4 &
+    damping coeff_restitution &
+    limit_damping &
+    rolling none &
+    twisting none
+
+neighbor 0.0002 bin
+neigh_modify delay 0 every 1 check yes
+
+fix integrate all nve/sphere
+
+timestep 0.000005
+
+dump trajectory all custom 1 oblique.lammpstrj &
+    id type x y z vx vy vz fx fy fz &
+    omegax omegay omegaz radius
+
+dump_modify trajectory sort id
+dump_modify trajectory format float %.17g
+
+thermo 2000
+thermo_style custom step time atoms ke
+
+run 20000

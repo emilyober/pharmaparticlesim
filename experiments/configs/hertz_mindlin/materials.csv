@@ -1,0 +1,3 @@
+name,density,youngModulus,poissonRatio
+Powder,1500,1000000,0.25
+Steel,7850,200000000000,0.30

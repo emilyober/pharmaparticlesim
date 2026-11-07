@@ -1,0 +1,1363 @@
+Integration: gravity correction, reference_dt=5e-6
+Rollout duration [s]: 0.07
+Checkpoint epoch: 4
+Prediction interval: 5e-05
+RMSE order: position [m], velocity [m/s], spin [rad/s]
+Protocol: bulk_distribution_v1
+Full DEM peak overlaps [µm]: [52.413556333497134, 28.410831086324308]
+
+Start frame 6000
+Fixed overlap limits [µm]: [104.82711266699427, 56.821662172648615]
+  DEM step 6010, one-step RMSE: [1.2774144162878272e-07, 0.0018916069062913086, 2.5550706473919416]
+  One-step / autonomous / DEM rotational energy [J]: 9.001961114403265e-07 9.001961114403265e-07 9.187985861837148e-07
+  Elapsed [s]: 0.000050
+  Mixing [score, coverage], ML: (0.0, 0.7391304347826086)
+  Mixing [score, coverage], DEM: (0.0, 0.7391304347826086)
+  Rotational energy absolute error [J]: 1.8602474743388297e-08
+Prediction 1, DEM step 6010:
+Prediction 1:
+  Model RMSE: [1.2774144162878272e-07, 0.0018916069062913086, 2.5550706473919416]
+  Constant velocity RMSE: [1.4172520490338222e-07, 0.00504365083246042, 2.7806382356347505]
+  Gravity only RMSE: [1.4335494619683743e-07, 0.0051048679700784584, 2.7806382356347505]
+  Model peak overlap [µm]: [52.413556333497134, 21.483770142008417]
+  Model kinetic energy [translation, rotation; J]: [5.600506584330162e-06, 9.001961114403265e-07]
+  DEM kinetic energy [translation, rotation; J]: [5.645252021747678e-06, 9.187985861837148e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.0, 'density_tv': 0.0, 'group0_tv': 0.0, 'group1_tv': 0.0}
+    Constant velocity: {'group_density_tv': 0.0, 'density_tv': 0.0, 'group0_tv': 0.0, 'group1_tv': 0.0}
+    Gravity only: {'group_density_tv': 0.0, 'density_tv': 0.0, 'group0_tv': 0.0, 'group1_tv': 0.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.0, 'density_tv': 0.0, 'group0_tv': 0.0, 'group1_tv': 0.0}
+    Constant velocity: {'group_density_tv': 0.0, 'density_tv': 0.0, 'group0_tv': 0.0, 'group1_tv': 0.0}
+    Gravity only: {'group_density_tv': 0.0, 'density_tv': 0.0, 'group0_tv': 0.0, 'group1_tv': 0.0}
+DEM step 6200: no recorded reference
+DEM step 6400: no recorded reference
+DEM step 6600: no recorded reference
+DEM step 6800: no recorded reference
+DEM step 7000: no recorded reference
+DEM step 7200: no recorded reference
+DEM step 7400: no recorded reference
+DEM step 7600: no recorded reference
+DEM step 7800: no recorded reference
+DEM step 8000: no recorded reference
+  DEM step 8200, one-step RMSE: [2.4589481871900065e-08, 0.0003330018744709459, 0.45576903421903203]
+  One-step / autonomous / DEM rotational energy [J]: 4.053333409737859e-07 4.31093673623523e-07 4.062860870621203e-07
+  Elapsed [s]: 0.011000
+  Mixing [score, coverage], ML: (1.1102230246251565e-16, 0.7111801242236024)
+  Mixing [score, coverage], DEM: (0.0, 0.6987577639751553)
+  Rotational energy absolute error [J]: 2.480758656140269e-08
+Prediction 220, DEM step 8200:
+Prediction 220:
+  Model RMSE: [7.316464024086454e-05, 0.01369135284776231, 10.412850188469317]
+  Constant velocity RMSE: [0.0003774681035001721, 0.045039612672858435, 27.54564315356425]
+  Gravity only RMSE: [0.0005199460593813391, 0.07119191165999256, 27.54564315356425]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.2683929553650246e-06, 4.31093673623523e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.453666159738875e-06, 4.062860870621203e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.015527950310559006, 'density_tv': 0.015527950310559006, 'group0_tv': 0.012422360248447204, 'group1_tv': 0.018633540372670808}
+    Constant velocity: {'group_density_tv': 0.12422360248447205, 'density_tv': 0.12422360248447205, 'group0_tv': 0.14906832298136646, 'group1_tv': 0.09937888198757763}
+    Gravity only: {'group_density_tv': 0.16149068322981366, 'density_tv': 0.16149068322981366, 'group0_tv': 0.16770186335403728, 'group1_tv': 0.15527950310559005}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.006211180124223602, 'density_tv': 0.006211180124223602, 'group0_tv': 0.006211180124223602, 'group1_tv': 0.006211180124223602}
+    Constant velocity: {'group_density_tv': 0.06832298136645963, 'density_tv': 0.06832298136645963, 'group0_tv': 0.06832298136645963, 'group1_tv': 0.06832298136645963}
+    Gravity only: {'group_density_tv': 0.10248447204968944, 'density_tv': 0.10248447204968944, 'group0_tv': 0.09937888198757763, 'group1_tv': 0.10559006211180125}
+  DEM step 8400, one-step RMSE: [3.1133101531920975e-08, 0.0004074343905188588, 0.5185326816103955]
+  One-step / autonomous / DEM rotational energy [J]: 4.029199629432047e-07 4.4627584037070084e-07 4.0387340358597346e-07
+  Elapsed [s]: 0.012000
+  Mixing [score, coverage], ML: (-2.220446049250313e-16, 0.7267080745341615)
+  Mixing [score, coverage], DEM: (0.0, 0.6832298136645962)
+  Rotational energy absolute error [J]: 4.240243678472738e-08
+Prediction 240, DEM step 8400:
+Prediction 240:
+  Model RMSE: [7.791515868120366e-05, 0.01486335683582223, 10.914978575810878]
+  Constant velocity RMSE: [0.0004143261332568019, 0.044632113650029705, 27.936023864106755]
+  Gravity only RMSE: [0.0005869626532395576, 0.07478623059027584, 27.936023864106755]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.262059033376214e-06, 4.4627584037070084e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.3940498856966254e-06, 4.0387340358597346e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.034161490683229816, 'density_tv': 0.034161490683229816, 'group0_tv': 0.012422360248447204, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.14285714285714285, 'density_tv': 0.14285714285714285, 'group0_tv': 0.16770186335403728, 'group1_tv': 0.11801242236024845}
+    Gravity only: {'group_density_tv': 0.17701863354037267, 'density_tv': 0.17701863354037267, 'group0_tv': 0.19254658385093168, 'group1_tv': 0.16149068322981366}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.006211180124223602, 'density_tv': 0.006211180124223602, 'group0_tv': 0.006211180124223602, 'group1_tv': 0.006211180124223602}
+    Constant velocity: {'group_density_tv': 0.06832298136645963, 'density_tv': 0.06832298136645963, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.062111801242236024}
+    Gravity only: {'group_density_tv': 0.12111801242236025, 'density_tv': 0.12111801242236025, 'group0_tv': 0.11180124223602485, 'group1_tv': 0.13043478260869565}
+  DEM step 8600, one-step RMSE: [2.621583657654724e-08, 0.00035865375812292914, 0.4760268684973136]
+  One-step / autonomous / DEM rotational energy [J]: 4.114363631725103e-07 4.4694333038375364e-07 4.132560676893623e-07
+  Elapsed [s]: 0.013000
+  Mixing [score, coverage], ML: (1.1102230246251565e-16, 0.7298136645962733)
+  Mixing [score, coverage], DEM: (0.0, 0.6708074534161491)
+  Rotational energy absolute error [J]: 3.368726269439136e-08
+Prediction 260, DEM step 8600:
+Prediction 260:
+  Model RMSE: [8.167671431435615e-05, 0.015583943245328132, 11.189612309530474]
+  Constant velocity RMSE: [0.0004513294307463629, 0.04532641846426811, 27.918003277447955]
+  Gravity only RMSE: [0.0006579920498613553, 0.0790855510183961, 27.918003277447955]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.3332798856911389e-06, 4.4694333038375364e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.4327224068431413e-06, 4.132560676893623e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.043478260869565216, 'density_tv': 0.043478260869565216, 'group0_tv': 0.024844720496894408, 'group1_tv': 0.062111801242236024}
+    Constant velocity: {'group_density_tv': 0.15838509316770186, 'density_tv': 0.15838509316770186, 'group0_tv': 0.18633540372670807, 'group1_tv': 0.13043478260869565}
+    Gravity only: {'group_density_tv': 0.19875776397515527, 'density_tv': 0.19875776397515527, 'group0_tv': 0.2111801242236025, 'group1_tv': 0.18633540372670807}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.009316770186335404, 'density_tv': 0.009316770186335404, 'group0_tv': 0.006211180124223602, 'group1_tv': 0.012422360248447204}
+    Constant velocity: {'group_density_tv': 0.08385093167701864, 'density_tv': 0.08385093167701864, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.08695652173913043}
+    Gravity only: {'group_density_tv': 0.14596273291925466, 'density_tv': 0.14596273291925466, 'group0_tv': 0.14285714285714285, 'group1_tv': 0.14906832298136646}
+  DEM step 8800, one-step RMSE: [2.735007747472054e-08, 0.0003368880713355763, 0.4842717600622952]
+  One-step / autonomous / DEM rotational energy [J]: 4.0215964769974296e-07 4.5016057296113555e-07 4.0274566847301955e-07
+  Elapsed [s]: 0.014000
+  Mixing [score, coverage], ML: (1.1102230246251565e-16, 0.7329192546583851)
+  Mixing [score, coverage], DEM: (1.1102230246251565e-16, 0.6739130434782609)
+  Rotational energy absolute error [J]: 4.7414904488116e-08
+Prediction 280, DEM step 8800:
+Prediction 280:
+  Model RMSE: [8.582903181074084e-05, 0.015305777899690155, 11.494289503488275]
+  Constant velocity RMSE: [0.0004891094790760892, 0.04552718675477595, 28.44843122559015]
+  Gravity only RMSE: [0.0007330642201388607, 0.08207318968583813, 28.44843122559015]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.350364937566017e-06, 4.5016057296113555e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.5548416062681557e-06, 4.0274566847301955e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.049689440993788817, 'density_tv': 0.049689440993788817, 'group0_tv': 0.031055900621118012, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.16149068322981366, 'density_tv': 0.16149068322981366, 'group0_tv': 0.19875776397515527, 'group1_tv': 0.12422360248447205}
+    Gravity only: {'group_density_tv': 0.2080745341614907, 'density_tv': 0.2080745341614907, 'group0_tv': 0.21739130434782608, 'group1_tv': 0.19875776397515527}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.015527950310559006, 'density_tv': 0.015527950310559006, 'group0_tv': 0.012422360248447204, 'group1_tv': 0.018633540372670808}
+    Constant velocity: {'group_density_tv': 0.08385093167701864, 'density_tv': 0.08385093167701864, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.08695652173913043}
+    Gravity only: {'group_density_tv': 0.16149068322981366, 'density_tv': 0.16149068322981366, 'group0_tv': 0.14906832298136646, 'group1_tv': 0.17391304347826086}
+  DEM step 9000, one-step RMSE: [3.2102515383254715e-08, 0.00045449792546695974, 0.5776169835346948]
+  One-step / autonomous / DEM rotational energy [J]: 3.8415853681187505e-07 4.567770529198437e-07 3.8692835733097104e-07
+  Elapsed [s]: 0.015000
+  Mixing [score, coverage], ML: (1.1102230246251565e-16, 0.7391304347826086)
+  Mixing [score, coverage], DEM: (0.0, 0.6956521739130435)
+  Rotational energy absolute error [J]: 6.984869558887264e-08
+Prediction 300, DEM step 9000:
+Prediction 300:
+  Model RMSE: [9.015098298200159e-05, 0.014894770352487595, 11.952201163545187]
+  Constant velocity RMSE: [0.0005274347439232351, 0.046159380073958936, 28.494663129365495]
+  Gravity only RMSE: [0.0008117997946937856, 0.08701675176518432, 28.494663129365495]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.4563836753944615e-06, 4.567770529198437e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.5213454013709661e-06, 3.8692835733097104e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.052795031055900624, 'density_tv': 0.052795031055900624, 'group0_tv': 0.018633540372670808, 'group1_tv': 0.08695652173913043}
+    Constant velocity: {'group_density_tv': 0.18322981366459629, 'density_tv': 0.18322981366459629, 'group0_tv': 0.21739130434782608, 'group1_tv': 0.14906832298136646}
+    Gravity only: {'group_density_tv': 0.21739130434782608, 'density_tv': 0.21739130434782608, 'group0_tv': 0.22981366459627328, 'group1_tv': 0.20496894409937888}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.015527950310559006, 'density_tv': 0.015527950310559006, 'group0_tv': 0.006211180124223602, 'group1_tv': 0.024844720496894408}
+    Constant velocity: {'group_density_tv': 0.08074534161490683, 'density_tv': 0.08074534161490683, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.08074534161490683}
+    Gravity only: {'group_density_tv': 0.17701863354037267, 'density_tv': 0.17701863354037267, 'group0_tv': 0.16149068322981366, 'group1_tv': 0.19254658385093168}
+  DEM step 9200, one-step RMSE: [3.1583361962226726e-08, 0.00044459048206494284, 0.6674229156682235]
+  One-step / autonomous / DEM rotational energy [J]: 3.844292838398373e-07 4.7028368504536536e-07 3.8688730734040197e-07
+  Elapsed [s]: 0.016000
+  Mixing [score, coverage], ML: (0.0, 0.7639751552795031)
+  Mixing [score, coverage], DEM: (-2.220446049250313e-16, 0.7111801242236024)
+  Rotational energy absolute error [J]: 8.33963777049634e-08
+Prediction 320, DEM step 9200:
+Prediction 320:
+  Model RMSE: [9.398139326170606e-05, 0.015045754916734466, 12.188025527471298]
+  Constant velocity RMSE: [0.0005677132903499609, 0.046968484353001855, 28.895539830578613]
+  Gravity only RMSE: [0.0008970845668636352, 0.09247773408223248, 28.895539830578613]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.519742970425367e-06, 4.7028368504536536e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.5998132415893278e-06, 3.8688730734040197e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.046583850931677016, 'density_tv': 0.046583850931677016, 'group0_tv': 0.018633540372670808, 'group1_tv': 0.07453416149068323}
+    Constant velocity: {'group_density_tv': 0.19254658385093168, 'density_tv': 0.19254658385093168, 'group0_tv': 0.2236024844720497, 'group1_tv': 0.16149068322981366}
+    Gravity only: {'group_density_tv': 0.2453416149068323, 'density_tv': 0.2453416149068323, 'group0_tv': 0.2670807453416149, 'group1_tv': 0.2236024844720497}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.015527950310559006, 'density_tv': 0.015527950310559006, 'group0_tv': 0.006211180124223602, 'group1_tv': 0.024844720496894408}
+    Constant velocity: {'group_density_tv': 0.08385093167701864, 'density_tv': 0.08385093167701864, 'group0_tv': 0.08695652173913043, 'group1_tv': 0.08074534161490683}
+    Gravity only: {'group_density_tv': 0.2329192546583851, 'density_tv': 0.2329192546583851, 'group0_tv': 0.2236024844720497, 'group1_tv': 0.2422360248447205}
+  DEM step 9400, one-step RMSE: [2.8990976715796674e-08, 0.00041145764722556253, 0.5810371654387407]
+  One-step / autonomous / DEM rotational energy [J]: 4.0413636986506715e-07 4.804979901763815e-07 4.0727422370454267e-07
+  Elapsed [s]: 0.017000
+  Mixing [score, coverage], ML: (0.0, 0.7857142857142857)
+  Mixing [score, coverage], DEM: (1.1102230246251565e-16, 0.7236024844720497)
+  Rotational energy absolute error [J]: 7.322376647183882e-08
+Prediction 340, DEM step 9400:
+Prediction 340:
+  Model RMSE: [9.79226378598982e-05, 0.013669039588799076, 12.965876540914666]
+  Constant velocity RMSE: [0.0006078614032663588, 0.04648717829637396, 29.053787494071088]
+  Gravity only RMSE: [0.0009866745618933167, 0.09712717842639393, 29.053787494071088]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.5834561034225683e-06, 4.804979901763815e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.5874342302949018e-06, 4.0727422370454267e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.046583850931677016, 'density_tv': 0.046583850931677016, 'group0_tv': 0.024844720496894408, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.18633540372670807, 'density_tv': 0.18633540372670807, 'group0_tv': 0.22981366459627328, 'group1_tv': 0.14285714285714285}
+    Gravity only: {'group_density_tv': 0.2515527950310559, 'density_tv': 0.2515527950310559, 'group0_tv': 0.2795031055900621, 'group1_tv': 0.2236024844720497}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.012422360248447204, 'density_tv': 0.012422360248447204, 'group0_tv': 0.006211180124223602, 'group1_tv': 0.018633540372670808}
+    Constant velocity: {'group_density_tv': 0.09627329192546584, 'density_tv': 0.09627329192546584, 'group0_tv': 0.10559006211180125, 'group1_tv': 0.08695652173913043}
+    Gravity only: {'group_density_tv': 0.2546583850931677, 'density_tv': 0.2546583850931677, 'group0_tv': 0.2422360248447205, 'group1_tv': 0.2670807453416149}
+  DEM step 9600, one-step RMSE: [2.7032642076522435e-08, 0.00039883821937650735, 0.48982537594783887]
+  One-step / autonomous / DEM rotational energy [J]: 4.179815305187637e-07 4.979442337563867e-07 4.192328834391263e-07
+  Elapsed [s]: 0.018000
+  Mixing [score, coverage], ML: (0.0, 0.7919254658385093)
+  Mixing [score, coverage], DEM: (1.1102230246251565e-16, 0.7236024844720497)
+  Rotational energy absolute error [J]: 7.871135031726045e-08
+Prediction 360, DEM step 9600:
+Prediction 360:
+  Model RMSE: [0.00010216958345984565, 0.013930569922060734, 13.172495166711725]
+  Constant velocity RMSE: [0.0006476551376328497, 0.04625098921459762, 30.05632529358268]
+  Gravity only RMSE: [0.0010809624127945225, 0.10190740839732551, 30.05632529358268]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.7159815955584761e-06, 4.979442337563867e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.6820489324529168e-06, 4.192328834391263e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.046583850931677016, 'density_tv': 0.046583850931677016, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.19254658385093168, 'density_tv': 0.19254658385093168, 'group0_tv': 0.2422360248447205, 'group1_tv': 0.14285714285714285}
+    Gravity only: {'group_density_tv': 0.27639751552795033, 'density_tv': 0.27639751552795033, 'group0_tv': 0.30434782608695654, 'group1_tv': 0.2484472049689441}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.027950310559006212, 'density_tv': 0.027950310559006212, 'group0_tv': 0.006211180124223602, 'group1_tv': 0.049689440993788817}
+    Constant velocity: {'group_density_tv': 0.09627329192546584, 'density_tv': 0.09627329192546584, 'group0_tv': 0.10559006211180125, 'group1_tv': 0.08695652173913043}
+    Gravity only: {'group_density_tv': 0.2826086956521739, 'density_tv': 0.2826086956521739, 'group0_tv': 0.2608695652173913, 'group1_tv': 0.30434782608695654}
+  DEM step 9800, one-step RMSE: [2.8963931031691792e-08, 0.0004247698774248969, 0.6180451241119744]
+  One-step / autonomous / DEM rotational energy [J]: 4.269308078046191e-07 5.116946267073406e-07 4.2883994060733455e-07
+  Elapsed [s]: 0.019000
+  Mixing [score, coverage], ML: (0.0, 0.782608695652174)
+  Mixing [score, coverage], DEM: (-2.220446049250313e-16, 0.7422360248447205)
+  Rotational energy absolute error [J]: 8.285468610000604e-08
+Prediction 380, DEM step 9800:
+Prediction 380:
+  Model RMSE: [0.00010674882063859143, 0.01366183839298575, 13.279571758817324]
+  Constant velocity RMSE: [0.0006879624680317483, 0.04729126414819872, 30.965592547647717]
+  Gravity only RMSE: [0.0011802844176416647, 0.10727406897113423, 30.965592547647717]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.890282509138884e-06, 5.116946267073406e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.7627099582935437e-06, 4.2883994060733455e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.049689440993788817, 'density_tv': 0.049689440993788817, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.062111801242236024}
+    Constant velocity: {'group_density_tv': 0.1956521739130435, 'density_tv': 0.1956521739130435, 'group0_tv': 0.2484472049689441, 'group1_tv': 0.14285714285714285}
+    Gravity only: {'group_density_tv': 0.33229813664596275, 'density_tv': 0.33229813664596275, 'group0_tv': 0.34782608695652173, 'group1_tv': 0.3167701863354037}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.031055900621118012, 'density_tv': 0.031055900621118012, 'group0_tv': 0.018633540372670808, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.08695652173913043, 'density_tv': 0.08695652173913043, 'group0_tv': 0.10559006211180125, 'group1_tv': 0.06832298136645963}
+    Gravity only: {'group_density_tv': 0.30124223602484473, 'density_tv': 0.30124223602484473, 'group0_tv': 0.2795031055900621, 'group1_tv': 0.32298136645962733}
+  DEM step 10000, one-step RMSE: [2.9104275228682136e-08, 0.0004069858976458005, 0.5644422283849663]
+  One-step / autonomous / DEM rotational energy [J]: 4.345449916306085e-07 5.418331552287689e-07 4.374317304013751e-07
+  Elapsed [s]: 0.020000
+  Mixing [score, coverage], ML: (0.0, 0.7857142857142857)
+  Mixing [score, coverage], DEM: (0.0, 0.7639751552795031)
+  Rotational energy absolute error [J]: 1.0440142482739384e-07
+Prediction 400, DEM step 10000:
+Prediction 400:
+  Model RMSE: [0.00011118397664080279, 0.014942567631660936, 13.235566868837628]
+  Constant velocity RMSE: [0.0007290553924620518, 0.04704378793135571, 30.948117539660686]
+  Gravity only RMSE: [0.0012848658999784403, 0.111536794686472, 30.948117539660686]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.984912797313364e-06, 5.418331552287689e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.9196378907790935e-06, 4.374317304013751e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.037267080745341616, 'density_tv': 0.037267080745341616, 'group0_tv': 0.018633540372670808, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.1956521739130435, 'density_tv': 0.1956521739130435, 'group0_tv': 0.2484472049689441, 'group1_tv': 0.14285714285714285}
+    Gravity only: {'group_density_tv': 0.36335403726708076, 'density_tv': 0.36335403726708076, 'group0_tv': 0.37267080745341613, 'group1_tv': 0.35403726708074534}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.031055900621118012, 'density_tv': 0.031055900621118012, 'group0_tv': 0.024844720496894408, 'group1_tv': 0.037267080745341616}
+    Constant velocity: {'group_density_tv': 0.09316770186335403, 'density_tv': 0.09316770186335403, 'group0_tv': 0.11180124223602485, 'group1_tv': 0.07453416149068323}
+    Gravity only: {'group_density_tv': 0.33540372670807456, 'density_tv': 0.33540372670807456, 'group0_tv': 0.3167701863354037, 'group1_tv': 0.35403726708074534}
+  DEM step 10200, one-step RMSE: [3.353542633903345e-08, 0.00045889153033535176, 0.6232205851062873]
+  One-step / autonomous / DEM rotational energy [J]: 4.437462717883701e-07 5.609732571005197e-07 4.463355438656365e-07
+  Elapsed [s]: 0.021000
+  Mixing [score, coverage], ML: (-2.220446049250313e-16, 0.7919254658385093)
+  Mixing [score, coverage], DEM: (-2.220446049250313e-16, 0.7981366459627329)
+  Rotational energy absolute error [J]: 1.1463771323488323e-07
+Prediction 420, DEM step 10200:
+Prediction 420:
+  Model RMSE: [0.00011514438868551065, 0.015051342187823927, 13.469074671854782]
+  Constant velocity RMSE: [0.0007696046493407065, 0.047449011785437964, 31.309995442751966]
+  Gravity only RMSE: [0.0013935490662018123, 0.11666425124475573, 31.309995442751966]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.069436514312119e-06, 5.609732571005197e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.9780863676105506e-06, 4.463355438656365e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.021739130434782608, 'density_tv': 0.021739130434782608, 'group0_tv': 0.012422360248447204, 'group1_tv': 0.031055900621118012}
+    Constant velocity: {'group_density_tv': 0.20496894409937888, 'density_tv': 0.20496894409937888, 'group0_tv': 0.2360248447204969, 'group1_tv': 0.17391304347826086}
+    Gravity only: {'group_density_tv': 0.37888198757763975, 'density_tv': 0.37888198757763975, 'group0_tv': 0.37888198757763975, 'group1_tv': 0.37888198757763975}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.024844720496894408, 'density_tv': 0.024844720496894408, 'group0_tv': 0.012422360248447204, 'group1_tv': 0.037267080745341616}
+    Constant velocity: {'group_density_tv': 0.10869565217391304, 'density_tv': 0.10869565217391304, 'group0_tv': 0.14285714285714285, 'group1_tv': 0.07453416149068323}
+    Gravity only: {'group_density_tv': 0.35714285714285715, 'density_tv': 0.35714285714285715, 'group0_tv': 0.33540372670807456, 'group1_tv': 0.37888198757763975}
+  DEM step 10400, one-step RMSE: [2.4691321650045948e-08, 0.00037533085386872095, 0.45769691616368985]
+  One-step / autonomous / DEM rotational energy [J]: 4.79201434087004e-07 5.796523291262993e-07 4.811302585622451e-07
+  Elapsed [s]: 0.022000
+  Mixing [score, coverage], ML: (1.1102230246251565e-16, 0.8229813664596274)
+  Mixing [score, coverage], DEM: (-2.220446049250313e-16, 0.7919254658385093)
+  Rotational energy absolute error [J]: 9.852207056405417e-08
+Prediction 440, DEM step 10400:
+Prediction 440:
+  Model RMSE: [0.0001186448798641186, 0.017270884385313105, 14.84907321525508]
+  Constant velocity RMSE: [0.0008122448445363023, 0.04998349774427603, 32.371938431195744]
+  Gravity only RMSE: [0.00150897669869784, 0.12318956444270321, 32.371938431195744]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.0550774770316925e-06, 5.796523291262993e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.1829504187745587e-06, 4.811302585622451e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.040372670807453416, 'density_tv': 0.040372670807453416, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.2236024844720497, 'density_tv': 0.2236024844720497, 'group0_tv': 0.2546583850931677, 'group1_tv': 0.19254658385093168}
+    Gravity only: {'group_density_tv': 0.40993788819875776, 'density_tv': 0.40993788819875776, 'group0_tv': 0.40372670807453415, 'group1_tv': 0.4161490683229814}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.040372670807453416, 'density_tv': 0.040372670807453416, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.11490683229813664, 'density_tv': 0.11490683229813664, 'group0_tv': 0.14906832298136646, 'group1_tv': 0.08074534161490683}
+    Gravity only: {'group_density_tv': 0.38198757763975155, 'density_tv': 0.38198757763975155, 'group0_tv': 0.37267080745341613, 'group1_tv': 0.391304347826087}
+  DEM step 10600, one-step RMSE: [3.0793447590920985e-08, 0.00046683269851567405, 0.6591498381154202]
+  One-step / autonomous / DEM rotational energy [J]: 5.026348540797402e-07 6.097387994074425e-07 5.040757282354437e-07
+  Elapsed [s]: 0.023000
+  Mixing [score, coverage], ML: (1.1102230246251565e-16, 0.8291925465838509)
+  Mixing [score, coverage], DEM: (0.0, 0.7950310559006211)
+  Rotational energy absolute error [J]: 1.056630711719988e-07
+Prediction 460, DEM step 10600:
+Prediction 460:
+  Model RMSE: [0.00012206268657165441, 0.017177525871726905, 14.688864527609804]
+  Constant velocity RMSE: [0.0008563291645183187, 0.05011414943245863, 33.36146676873205]
+  Gravity only RMSE: [0.0016296000049576876, 0.12718772118363308, 33.36146676873205]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.168986837663394e-06, 6.097387994074425e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.2801809694425172e-06, 5.040757282354437e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.037267080745341616, 'density_tv': 0.037267080745341616, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.037267080745341616}
+    Constant velocity: {'group_density_tv': 0.2453416149068323, 'density_tv': 0.2453416149068323, 'group0_tv': 0.2670807453416149, 'group1_tv': 0.2236024844720497}
+    Gravity only: {'group_density_tv': 0.4161490683229814, 'density_tv': 0.4161490683229814, 'group0_tv': 0.40372670807453415, 'group1_tv': 0.42857142857142855}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.043478260869565216, 'density_tv': 0.043478260869565216, 'group0_tv': 0.049689440993788817, 'group1_tv': 0.037267080745341616}
+    Constant velocity: {'group_density_tv': 0.12732919254658384, 'density_tv': 0.12732919254658384, 'group0_tv': 0.16149068322981366, 'group1_tv': 0.09316770186335403}
+    Gravity only: {'group_density_tv': 0.41304347826086957, 'density_tv': 0.41304347826086957, 'group0_tv': 0.40993788819875776, 'group1_tv': 0.4161490683229814}
+  DEM step 10800, one-step RMSE: [4.0307279569756604e-08, 0.0004722794476489389, 0.5529773745837946]
+  One-step / autonomous / DEM rotational energy [J]: 5.371915599556561e-07 6.51941521073868e-07 5.38577168425764e-07
+  Elapsed [s]: 0.024000
+  Mixing [score, coverage], ML: (1.1102230246251565e-16, 0.8291925465838509)
+  Mixing [score, coverage], DEM: (2.220446049250313e-16, 0.8198757763975155)
+  Rotational energy absolute error [J]: 1.1336435264810399e-07
+Prediction 480, DEM step 10800:
+Prediction 480:
+  Model RMSE: [0.00012474824654095624, 0.0182719457563267, 15.086526960871115]
+  Constant velocity RMSE: [0.0008999693331713178, 0.049645877213049965, 33.938894547953524]
+  Gravity only RMSE: [0.0017546515720990238, 0.1323453774122796, 33.938894547953524]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.1934078103529398e-06, 6.51941521073868e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.362592945640975e-06, 5.38577168425764e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.034161490683229816, 'density_tv': 0.034161490683229816, 'group0_tv': 0.031055900621118012, 'group1_tv': 0.037267080745341616}
+    Constant velocity: {'group_density_tv': 0.2391304347826087, 'density_tv': 0.2391304347826087, 'group0_tv': 0.2484472049689441, 'group1_tv': 0.22981366459627328}
+    Gravity only: {'group_density_tv': 0.4254658385093168, 'density_tv': 0.4254658385093168, 'group0_tv': 0.42857142857142855, 'group1_tv': 0.422360248447205}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.046583850931677016, 'density_tv': 0.046583850931677016, 'group0_tv': 0.043478260869565216, 'group1_tv': 0.049689440993788817}
+    Constant velocity: {'group_density_tv': 0.15217391304347827, 'density_tv': 0.15217391304347827, 'group0_tv': 0.17391304347826086, 'group1_tv': 0.13043478260869565}
+    Gravity only: {'group_density_tv': 0.43788819875776397, 'density_tv': 0.43788819875776397, 'group0_tv': 0.4409937888198758, 'group1_tv': 0.43478260869565216}
+  DEM step 11000, one-step RMSE: [4.198258419397757e-08, 0.00043169115918423155, 0.508603193863664]
+  One-step / autonomous / DEM rotational energy [J]: 5.550020689618719e-07 7.18028577569452e-07 5.583041285614841e-07
+  Elapsed [s]: 0.025000
+  Mixing [score, coverage], ML: (-2.220446049250313e-16, 0.8354037267080745)
+  Mixing [score, coverage], DEM: (-2.220446049250313e-16, 0.8229813664596274)
+  Rotational energy absolute error [J]: 1.5972444900796793e-07
+Prediction 500, DEM step 11000:
+Prediction 500:
+  Model RMSE: [0.0001264479721543465, 0.019057537451093964, 15.908706499950988]
+  Constant velocity RMSE: [0.0009429241433183231, 0.04994216724908149, 33.773522150243195]
+  Gravity only RMSE: [0.001885208316558473, 0.13886308347974485, 33.773522150243195]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.252657974166968e-06, 7.18028577569452e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.338314584798085e-06, 5.583041285614841e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.043478260869565216, 'density_tv': 0.043478260869565216, 'group0_tv': 0.031055900621118012, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.2515527950310559, 'density_tv': 0.2515527950310559, 'group0_tv': 0.2670807453416149, 'group1_tv': 0.2360248447204969}
+    Gravity only: {'group_density_tv': 0.46273291925465837, 'density_tv': 0.46273291925465837, 'group0_tv': 0.4658385093167702, 'group1_tv': 0.45962732919254656}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.049689440993788817, 'density_tv': 0.049689440993788817, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.062111801242236024}
+    Constant velocity: {'group_density_tv': 0.18633540372670807, 'density_tv': 0.18633540372670807, 'group0_tv': 0.21739130434782608, 'group1_tv': 0.15527950310559005}
+    Gravity only: {'group_density_tv': 0.4409937888198758, 'density_tv': 0.4409937888198758, 'group0_tv': 0.4472049689440994, 'group1_tv': 0.43478260869565216}
+  DEM step 11200, one-step RMSE: [3.278198011193365e-08, 0.00044727501250636396, 0.6493275012191629]
+  One-step / autonomous / DEM rotational energy [J]: 5.852778278666842e-07 7.903061388146418e-07 5.894694176072598e-07
+  Elapsed [s]: 0.026000
+  Mixing [score, coverage], ML: (2.220446049250313e-16, 0.8136645962732919)
+  Mixing [score, coverage], DEM: (-2.220446049250313e-16, 0.8229813664596274)
+  Rotational energy absolute error [J]: 2.00836721207382e-07
+Prediction 520, DEM step 11200:
+Prediction 520:
+  Model RMSE: [0.0001273927214596569, 0.019636434826712103, 16.93936111438198]
+  Constant velocity RMSE: [0.0009860202668597379, 0.050137439074387, 34.2268525931683]
+  Gravity only RMSE: [0.0020216900575144806, 0.14423600760657418, 34.2268525931683]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.2014720933814824e-06, 7.903061388146418e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.4172838402218057e-06, 5.894694176072598e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.040372670807453416, 'density_tv': 0.040372670807453416, 'group0_tv': 0.024844720496894408, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.2670807453416149, 'density_tv': 0.2670807453416149, 'group0_tv': 0.2795031055900621, 'group1_tv': 0.2546583850931677}
+    Gravity only: {'group_density_tv': 0.484472049689441, 'density_tv': 0.484472049689441, 'group0_tv': 0.5031055900621118, 'group1_tv': 0.4658385093167702}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.046583850931677016, 'density_tv': 0.046583850931677016, 'group0_tv': 0.024844720496894408, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.19875776397515527, 'density_tv': 0.19875776397515527, 'group0_tv': 0.2360248447204969, 'group1_tv': 0.16149068322981366}
+    Gravity only: {'group_density_tv': 0.4440993788819876, 'density_tv': 0.4440993788819876, 'group0_tv': 0.4472049689440994, 'group1_tv': 0.4409937888198758}
+  DEM step 11400, one-step RMSE: [2.910604674320978e-08, 0.0004067976480566997, 0.5494058045906809]
+  One-step / autonomous / DEM rotational energy [J]: 6.155136801367048e-07 8.023097328243215e-07 6.175608966938032e-07
+  Elapsed [s]: 0.027000
+  Mixing [score, coverage], ML: (0.0, 0.8043478260869565)
+  Mixing [score, coverage], DEM: (-2.220446049250313e-16, 0.8260869565217391)
+  Rotational energy absolute error [J]: 1.8474883613051838e-07
+Prediction 540, DEM step 11400:
+Prediction 540:
+  Model RMSE: [0.00012643361867863427, 0.01918997884799891, 17.17778002185673]
+  Constant velocity RMSE: [0.0010303617169886822, 0.05191920525305709, 34.605556440536866]
+  Gravity only RMSE: [0.0021639348380815466, 0.1500157819212894, 34.605556440536866]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.1198294036815943e-06, 8.023097328243215e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.4440966404173244e-06, 6.175608966938032e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.046583850931677016, 'density_tv': 0.046583850931677016, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.2919254658385093, 'density_tv': 0.2919254658385093, 'group0_tv': 0.3105590062111801, 'group1_tv': 0.2732919254658385}
+    Gravity only: {'group_density_tv': 0.5186335403726708, 'density_tv': 0.5186335403726708, 'group0_tv': 0.5590062111801242, 'group1_tv': 0.4782608695652174}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.043478260869565216, 'density_tv': 0.043478260869565216, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.049689440993788817}
+    Constant velocity: {'group_density_tv': 0.21428571428571427, 'density_tv': 0.21428571428571427, 'group0_tv': 0.2546583850931677, 'group1_tv': 0.17391304347826086}
+    Gravity only: {'group_density_tv': 0.453416149068323, 'density_tv': 0.453416149068323, 'group0_tv': 0.45962732919254656, 'group1_tv': 0.4472049689440994}
+  DEM step 11600, one-step RMSE: [2.633876392559121e-08, 0.0004401613098119165, 0.5553790971991664]
+  One-step / autonomous / DEM rotational energy [J]: 6.2127982672344e-07 8.571594521116175e-07 6.239144779031585e-07
+  Elapsed [s]: 0.028000
+  Mixing [score, coverage], ML: (0.0, 0.8043478260869565)
+  Mixing [score, coverage], DEM: (0.0, 0.8322981366459627)
+  Rotational energy absolute error [J]: 2.3324497420845897e-07
+Prediction 560, DEM step 11600:
+Prediction 560:
+  Model RMSE: [0.00012558155898659677, 0.020164298689041352, 17.781448783250298]
+  Constant velocity RMSE: [0.0010768079889390157, 0.05273536231367733, 34.61251159284166]
+  Gravity only RMSE: [0.0023124487586513197, 0.1553430175675663, 34.61251159284166]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.1677472392456768e-06, 8.571594521116175e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.5855412983421418e-06, 6.239144779031585e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.040372670807453416, 'density_tv': 0.040372670807453416, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.30434782608695654, 'density_tv': 0.30434782608695654, 'group0_tv': 0.2981366459627329, 'group1_tv': 0.3105590062111801}
+    Gravity only: {'group_density_tv': 0.5372670807453416, 'density_tv': 0.5372670807453416, 'group0_tv': 0.5838509316770186, 'group1_tv': 0.4906832298136646}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.049689440993788817, 'density_tv': 0.049689440993788817, 'group0_tv': 0.043478260869565216, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.22981366459627328, 'density_tv': 0.22981366459627328, 'group0_tv': 0.2732919254658385, 'group1_tv': 0.18633540372670807}
+    Gravity only: {'group_density_tv': 0.46273291925465837, 'density_tv': 0.46273291925465837, 'group0_tv': 0.45962732919254656, 'group1_tv': 0.4658385093167702}
+  DEM step 11800, one-step RMSE: [3.262927395039765e-08, 0.0004480419838271387, 0.7119461949308981]
+  One-step / autonomous / DEM rotational energy [J]: 6.335938386524784e-07 8.955287221642471e-07 6.361751967298608e-07
+  Elapsed [s]: 0.029000
+  Mixing [score, coverage], ML: (0.027455218259815894, 0.8136645962732919)
+  Mixing [score, coverage], DEM: (1.1102230246251565e-16, 0.8385093167701864)
+  Rotational energy absolute error [J]: 2.593535254343863e-07
+Prediction 580, DEM step 11800:
+Prediction 580:
+  Model RMSE: [0.00012585195930289757, 0.021074711634302145, 18.719189294710844]
+  Constant velocity RMSE: [0.0011234846567235298, 0.052584333671967236, 34.94201022377063]
+  Gravity only RMSE: [0.0024659058330737875, 0.15993634711545732, 34.94201022377063]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.2541391384757564e-06, 8.955287221642471e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.6786108085479087e-06, 6.361751967298608e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.040372670807453416, 'density_tv': 0.040372670807453416, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.30434782608695654, 'density_tv': 0.30434782608695654, 'group0_tv': 0.2919254658385093, 'group1_tv': 0.3167701863354037}
+    Gravity only: {'group_density_tv': 0.5652173913043478, 'density_tv': 0.5652173913043478, 'group0_tv': 0.5962732919254659, 'group1_tv': 0.5341614906832298}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.040372670807453416, 'density_tv': 0.040372670807453416, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.2422360248447205, 'density_tv': 0.2422360248447205, 'group0_tv': 0.2795031055900621, 'group1_tv': 0.20496894409937888}
+    Gravity only: {'group_density_tv': 0.4751552795031056, 'density_tv': 0.4751552795031056, 'group0_tv': 0.45962732919254656, 'group1_tv': 0.4906832298136646}
+  DEM step 12000, one-step RMSE: [4.4059248113333317e-08, 0.0005722939012915186, 0.8690035212039623]
+  One-step / autonomous / DEM rotational energy [J]: 6.690856812688808e-07 9.304544090626793e-07 6.740894890914563e-07
+  Elapsed [s]: 0.030000
+  Mixing [score, coverage], ML: (0.02750223061984991, 0.8136645962732919)
+  Mixing [score, coverage], DEM: (-2.220446049250313e-16, 0.8291925465838509)
+  Rotational energy absolute error [J]: 2.56364919971223e-07
+Prediction 600, DEM step 12000:
+Prediction 600:
+  Model RMSE: [0.00012705698159483974, 0.020955733712521997, 19.70088937126852]
+  Constant velocity RMSE: [0.0011702365835963753, 0.052736260823404685, 34.98828164227318]
+  Gravity only RMSE: [0.0026238851920962823, 0.16535290844834225, 34.98828164227318]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.273026486863644e-06, 9.304544090626793e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.703188470502247e-06, 6.740894890914563e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.043478260869565216, 'density_tv': 0.043478260869565216, 'group0_tv': 0.043478260869565216, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.30745341614906835, 'density_tv': 0.30745341614906835, 'group0_tv': 0.2981366459627329, 'group1_tv': 0.3167701863354037}
+    Gravity only: {'group_density_tv': 0.5807453416149069, 'density_tv': 0.5807453416149069, 'group0_tv': 0.6024844720496895, 'group1_tv': 0.5590062111801242}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.046583850931677016, 'density_tv': 0.046583850931677016, 'group0_tv': 0.043478260869565216, 'group1_tv': 0.049689440993788817}
+    Constant velocity: {'group_density_tv': 0.2422360248447205, 'density_tv': 0.2422360248447205, 'group0_tv': 0.2732919254658385, 'group1_tv': 0.2111801242236025}
+    Gravity only: {'group_density_tv': 0.4968944099378882, 'density_tv': 0.4968944099378882, 'group0_tv': 0.4782608695652174, 'group1_tv': 0.515527950310559}
+  DEM step 12200, one-step RMSE: [3.0843918596268216e-08, 0.0004132639699313408, 0.46773453532679743]
+  One-step / autonomous / DEM rotational energy [J]: 7.43231723096207e-07 9.610244773008106e-07 7.448042388739261e-07
+  Elapsed [s]: 0.031000
+  Mixing [score, coverage], ML: (0.02763549731983317, 0.8105590062111802)
+  Mixing [score, coverage], DEM: (-2.220446049250313e-16, 0.8322981366459627)
+  Rotational energy absolute error [J]: 2.1622023842688446e-07
+Prediction 620, DEM step 12200:
+Prediction 620:
+  Model RMSE: [0.00012950976345079456, 0.021671585335470585, 20.657552634048297]
+  Constant velocity RMSE: [0.0012167855661207232, 0.05220934599671664, 35.952253881669975]
+  Gravity only RMSE: [0.002787898287289223, 0.17075762002638456, 35.952253881669975]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.368964675120965e-06, 9.610244773008106e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.7574562831000873e-06, 7.448042388739261e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.062111801242236024, 'density_tv': 0.062111801242236024, 'group0_tv': 0.049689440993788817, 'group1_tv': 0.07453416149068323}
+    Constant velocity: {'group_density_tv': 0.32608695652173914, 'density_tv': 0.32608695652173914, 'group0_tv': 0.3167701863354037, 'group1_tv': 0.33540372670807456}
+    Gravity only: {'group_density_tv': 0.5900621118012422, 'density_tv': 0.5900621118012422, 'group0_tv': 0.6086956521739131, 'group1_tv': 0.5714285714285714}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.049689440993788817, 'density_tv': 0.049689440993788817, 'group0_tv': 0.043478260869565216, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.2515527950310559, 'density_tv': 0.2515527950310559, 'group0_tv': 0.2732919254658385, 'group1_tv': 0.22981366459627328}
+    Gravity only: {'group_density_tv': 0.515527950310559, 'density_tv': 0.515527950310559, 'group0_tv': 0.4968944099378882, 'group1_tv': 0.5341614906832298}
+  DEM step 12400, one-step RMSE: [3.1220487829799087e-08, 0.000524201839511439, 0.5855425019237199]
+  One-step / autonomous / DEM rotational energy [J]: 7.767594463286851e-07 9.920550774470892e-07 7.822174537468071e-07
+  Elapsed [s]: 0.032000
+  Mixing [score, coverage], ML: (0.02686893845050764, 0.8291925465838509)
+  Mixing [score, coverage], DEM: (0.0, 0.8416149068322981)
+  Rotational energy absolute error [J]: 2.0983762370028204e-07
+Prediction 640, DEM step 12400:
+Prediction 640:
+  Model RMSE: [0.00013283884728649116, 0.021558482097897964, 22.140268058211078]
+  Constant velocity RMSE: [0.001263960233767308, 0.052765447228784824, 35.674218196422906]
+  Gravity only RMSE: [0.002957386011543618, 0.17611711677470346, 35.674218196422906]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.483765708627108e-06, 9.920550774470892e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.8539456438837615e-06, 7.822174537468071e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.06521739130434782, 'density_tv': 0.06521739130434782, 'group0_tv': 0.055900621118012424, 'group1_tv': 0.07453416149068323}
+    Constant velocity: {'group_density_tv': 0.32919254658385094, 'density_tv': 0.32919254658385094, 'group0_tv': 0.32919254658385094, 'group1_tv': 0.32919254658385094}
+    Gravity only: {'group_density_tv': 0.5993788819875776, 'density_tv': 0.5993788819875776, 'group0_tv': 0.6086956521739131, 'group1_tv': 0.5900621118012422}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.046583850931677016, 'density_tv': 0.046583850931677016, 'group0_tv': 0.049689440993788817, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.2577639751552795, 'density_tv': 0.2577639751552795, 'group0_tv': 0.2857142857142857, 'group1_tv': 0.22981366459627328}
+    Gravity only: {'group_density_tv': 0.5403726708074534, 'density_tv': 0.5403726708074534, 'group0_tv': 0.5279503105590062, 'group1_tv': 0.5527950310559007}
+  DEM step 12600, one-step RMSE: [3.308335589454173e-08, 0.000437759457576984, 0.5081769298413736]
+  One-step / autonomous / DEM rotational energy [J]: 8.025560638037923e-07 1.0217696046787647e-06 8.045028663856197e-07
+  Elapsed [s]: 0.033000
+  Mixing [score, coverage], ML: (0.0374479127679217, 0.8322981366459627)
+  Mixing [score, coverage], DEM: (0.0, 0.8385093167701864)
+  Rotational energy absolute error [J]: 2.1726673829314504e-07
+Prediction 660, DEM step 12600:
+Prediction 660:
+  Model RMSE: [0.000137368806805132, 0.021500010083738717, 22.13138635538968]
+  Constant velocity RMSE: [0.001311291835660272, 0.05268878889931161, 36.19083131378272]
+  Gravity only RMSE: [0.003132338702026098, 0.18154278077765, 36.19083131378272]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.580186135001804e-06, 1.0217696046787647e-06]
+  DEM kinetic energy [translation, rotation; J]: [2.9119196747131365e-06, 8.045028663856197e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.07763975155279502, 'density_tv': 0.07763975155279502, 'group0_tv': 0.06832298136645963, 'group1_tv': 0.08695652173913043}
+    Constant velocity: {'group_density_tv': 0.3416149068322981, 'density_tv': 0.3416149068322981, 'group0_tv': 0.3416149068322981, 'group1_tv': 0.3416149068322981}
+    Gravity only: {'group_density_tv': 0.6118012422360248, 'density_tv': 0.6118012422360248, 'group0_tv': 0.6211180124223602, 'group1_tv': 0.6024844720496895}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.043478260869565216, 'density_tv': 0.043478260869565216, 'group0_tv': 0.037267080745341616, 'group1_tv': 0.049689440993788817}
+    Constant velocity: {'group_density_tv': 0.2577639751552795, 'density_tv': 0.2577639751552795, 'group0_tv': 0.2857142857142857, 'group1_tv': 0.22981366459627328}
+    Gravity only: {'group_density_tv': 0.5527950310559007, 'density_tv': 0.5527950310559007, 'group0_tv': 0.546583850931677, 'group1_tv': 0.5590062111801242}
+  DEM step 12800, one-step RMSE: [3.498690761806134e-08, 0.00045221193722206883, 0.6024037680249534]
+  One-step / autonomous / DEM rotational energy [J]: 8.192919786051054e-07 1.0351062629754439e-06 8.21671360235105e-07
+  Elapsed [s]: 0.034000
+  Mixing [score, coverage], ML: (0.048628928994225995, 0.84472049689441)
+  Mixing [score, coverage], DEM: (1.1102230246251565e-16, 0.8354037267080745)
+  Rotational energy absolute error [J]: 2.134349027403389e-07
+Prediction 680, DEM step 12800:
+Prediction 680:
+  Model RMSE: [0.00014259217262390918, 0.019561657847233453, 21.931311098681725]
+  Constant velocity RMSE: [0.001358835247483015, 0.052933238085652284, 36.376758959283556]
+  Gravity only RMSE: [0.0033125824153465437, 0.18691292844641683, 36.376758959283556]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.6438849440109066e-06, 1.0351062629754439e-06]
+  DEM kinetic energy [translation, rotation; J]: [2.8848204370730445e-06, 8.21671360235105e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.07763975155279502, 'density_tv': 0.07453416149068323, 'group0_tv': 0.06832298136645963, 'group1_tv': 0.08695652173913043}
+    Constant velocity: {'group_density_tv': 0.35403726708074534, 'density_tv': 0.35403726708074534, 'group0_tv': 0.36024844720496896, 'group1_tv': 0.34782608695652173}
+    Gravity only: {'group_density_tv': 0.6335403726708074, 'density_tv': 0.6335403726708074, 'group0_tv': 0.6521739130434783, 'group1_tv': 0.6149068322981367}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.046583850931677016, 'density_tv': 0.046583850931677016, 'group0_tv': 0.043478260869565216, 'group1_tv': 0.049689440993788817}
+    Constant velocity: {'group_density_tv': 0.2639751552795031, 'density_tv': 0.2639751552795031, 'group0_tv': 0.2981366459627329, 'group1_tv': 0.22981366459627328}
+    Gravity only: {'group_density_tv': 0.5838509316770186, 'density_tv': 0.5838509316770186, 'group0_tv': 0.5838509316770186, 'group1_tv': 0.5838509316770186}
+  DEM step 13000, one-step RMSE: [2.992119420795233e-08, 0.00046350347537243866, 0.6027240173373014]
+  One-step / autonomous / DEM rotational energy [J]: 8.595486051442237e-07 1.0787827458240383e-06 8.637724072079884e-07
+  Elapsed [s]: 0.035000
+  Mixing [score, coverage], ML: (0.049222216017324016, 0.8322981366459627)
+  Mixing [score, coverage], DEM: (0.01299790933098588, 0.8385093167701864)
+  Rotational energy absolute error [J]: 2.150103386160499e-07
+Prediction 700, DEM step 13000:
+Prediction 700:
+  Model RMSE: [0.00014743357528871942, 0.01847487167903897, 22.373318892450833]
+  Constant velocity RMSE: [0.0014056706670532019, 0.051390979844068194, 37.141826449128814]
+  Gravity only RMSE: [0.0034977688574434483, 0.19147238119051418, 37.141826449128814]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.7220097332260443e-06, 1.0787827458240383e-06]
+  DEM kinetic energy [translation, rotation; J]: [2.8368653627642455e-06, 8.637724072079884e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.07453416149068323, 'density_tv': 0.07142857142857142, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.07453416149068323}
+    Constant velocity: {'group_density_tv': 0.3695652173913043, 'density_tv': 0.3695652173913043, 'group0_tv': 0.38509316770186336, 'group1_tv': 0.35403726708074534}
+    Gravity only: {'group_density_tv': 0.6614906832298136, 'density_tv': 0.6614906832298136, 'group0_tv': 0.6770186335403726, 'group1_tv': 0.6459627329192547}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.046583850931677016, 'density_tv': 0.046583850931677016, 'group0_tv': 0.049689440993788817, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.2732919254658385, 'density_tv': 0.2732919254658385, 'group0_tv': 0.30434782608695654, 'group1_tv': 0.2422360248447205}
+    Gravity only: {'group_density_tv': 0.6149068322981367, 'density_tv': 0.6149068322981367, 'group0_tv': 0.6024844720496895, 'group1_tv': 0.6273291925465838}
+  DEM step 13200, one-step RMSE: [4.3285876392056864e-08, 0.0006634658113454156, 0.893203602987015]
+  One-step / autonomous / DEM rotational energy [J]: 8.891260157793623e-07 1.0853637797516196e-06 8.975451821942999e-07
+  Elapsed [s]: 0.036000
+  Mixing [score, coverage], ML: (0.06217464788732385, 0.8291925465838509)
+  Mixing [score, coverage], DEM: (0.013051735610513537, 0.8354037267080745)
+  Rotational energy absolute error [J]: 1.8781859755731966e-07
+Prediction 720, DEM step 13200:
+Prediction 720:
+  Model RMSE: [0.00015171483217847834, 0.018702402690376162, 22.360267859101675]
+  Constant velocity RMSE: [0.0014528872808703152, 0.05125596479442775, 37.59205966603793]
+  Gravity only RMSE: [0.003688395812860567, 0.19687042557080273, 37.59205966603793]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.742959498756065e-06, 1.0853637797516196e-06]
+  DEM kinetic energy [translation, rotation; J]: [2.7587872436405985e-06, 8.975451821942999e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.07453416149068323, 'density_tv': 0.06832298136645963, 'group0_tv': 0.06832298136645963, 'group1_tv': 0.08074534161490683}
+    Constant velocity: {'group_density_tv': 0.3695652173913043, 'density_tv': 0.3695652173913043, 'group0_tv': 0.38509316770186336, 'group1_tv': 0.35403726708074534}
+    Gravity only: {'group_density_tv': 0.7080745341614907, 'density_tv': 0.7080745341614907, 'group0_tv': 0.6956521739130435, 'group1_tv': 0.7204968944099379}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.059006211180124224, 'density_tv': 0.059006211180124224, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.2795031055900621, 'density_tv': 0.2795031055900621, 'group0_tv': 0.3105590062111801, 'group1_tv': 0.2484472049689441}
+    Gravity only: {'group_density_tv': 0.6645962732919255, 'density_tv': 0.6645962732919255, 'group0_tv': 0.6273291925465838, 'group1_tv': 0.7018633540372671}
+  DEM step 13400, one-step RMSE: [2.8965804243097688e-08, 0.00043471112536373334, 0.5006736799660157]
+  One-step / autonomous / DEM rotational energy [J]: 9.255081985169882e-07 1.0646905391223173e-06 9.291507931320755e-07
+  Elapsed [s]: 0.037000
+  Mixing [score, coverage], ML: (0.06135576447303326, 0.8385093167701864)
+  Mixing [score, coverage], DEM: (0.01304161125886516, 0.8354037267080745)
+  Rotational energy absolute error [J]: 1.3553974599024185e-07
+Prediction 740, DEM step 13400:
+Prediction 740:
+  Model RMSE: [0.00015567263863931345, 0.020295669728457293, 22.47554577935997]
+  Constant velocity RMSE: [0.0014995044319066752, 0.05130123449934634, 37.83799663345563]
+  Gravity only RMSE: [0.0038849771265959464, 0.20368295700907843, 37.83799663345563]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.7829514164883723e-06, 1.0646905391223173e-06]
+  DEM kinetic energy [translation, rotation; J]: [2.7930708135395137e-06, 9.291507931320755e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.07453416149068323, 'density_tv': 0.06832298136645963, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.37577639751552794, 'density_tv': 0.37577639751552794, 'group0_tv': 0.40372670807453415, 'group1_tv': 0.34782608695652173}
+    Gravity only: {'group_density_tv': 0.7360248447204969, 'density_tv': 0.7360248447204969, 'group0_tv': 0.7204968944099379, 'group1_tv': 0.7515527950310559}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.059006211180124224, 'density_tv': 0.059006211180124224, 'group0_tv': 0.062111801242236024, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.2919254658385093, 'density_tv': 0.2919254658385093, 'group0_tv': 0.32298136645962733, 'group1_tv': 0.2608695652173913}
+    Gravity only: {'group_density_tv': 0.6987577639751553, 'density_tv': 0.6987577639751553, 'group0_tv': 0.6521739130434783, 'group1_tv': 0.7453416149068323}
+  DEM step 13600, one-step RMSE: [3.123140654255506e-08, 0.00046318189872547074, 0.5440143474036794]
+  One-step / autonomous / DEM rotational energy [J]: 9.372798064417558e-07 1.1002739424472126e-06 9.380565947587172e-07
+  Elapsed [s]: 0.038000
+  Mixing [score, coverage], ML: (0.07160511867958685, 0.8416149068322981)
+  Mixing [score, coverage], DEM: (0.026171875000000067, 0.8322981366459627)
+  Rotational energy absolute error [J]: 1.6221734768849542e-07
+Prediction 760, DEM step 13600:
+Prediction 760:
+  Model RMSE: [0.00016028723293746153, 0.020978948966054064, 23.04539996466447]
+  Constant velocity RMSE: [0.0015459523991567634, 0.05136499877028646, 38.02224645771127]
+  Gravity only RMSE: [0.004087314038125134, 0.20895947808003243, 38.02224645771127]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.8798954244150674e-06, 1.1002739424472126e-06]
+  DEM kinetic energy [translation, rotation; J]: [2.7953849047737263e-06, 9.380565947587172e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.06521739130434782, 'density_tv': 0.062111801242236024, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.049689440993788817}
+    Constant velocity: {'group_density_tv': 0.38198757763975155, 'density_tv': 0.38198757763975155, 'group0_tv': 0.40993788819875776, 'group1_tv': 0.35403726708074534}
+    Gravity only: {'group_density_tv': 0.7515527950310559, 'density_tv': 0.7515527950310559, 'group0_tv': 0.7329192546583851, 'group1_tv': 0.7701863354037267}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.062111801242236024, 'density_tv': 0.062111801242236024, 'group0_tv': 0.062111801242236024, 'group1_tv': 0.062111801242236024}
+    Constant velocity: {'group_density_tv': 0.30124223602484473, 'density_tv': 0.30124223602484473, 'group0_tv': 0.33540372670807456, 'group1_tv': 0.2670807453416149}
+    Gravity only: {'group_density_tv': 0.7236024844720497, 'density_tv': 0.7236024844720497, 'group0_tv': 0.6832298136645962, 'group1_tv': 0.7639751552795031}
+  DEM step 13800, one-step RMSE: [3.653928528590266e-08, 0.0004902968034989281, 0.6623397588232883]
+  One-step / autonomous / DEM rotational energy [J]: 9.265012473161899e-07 1.1228256037676553e-06 9.290843158183471e-07
+  Elapsed [s]: 0.039000
+  Mixing [score, coverage], ML: (0.07021080036953053, 0.8540372670807453)
+  Mixing [score, coverage], DEM: (0.03830523367565486, 0.8385093167701864)
+  Rotational energy absolute error [J]: 1.9374128794930815e-07
+Prediction 780, DEM step 13800:
+Prediction 780:
+  Model RMSE: [0.0001661597622654536, 0.020775677747279713, 23.815124591503995]
+  Constant velocity RMSE: [0.0015923379461950764, 0.05125919749341831, 37.73552601732161]
+  Gravity only RMSE: [0.0042954734607519385, 0.21515183126433096, 37.73552601732161]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.9688019985570077e-06, 1.1228256037676553e-06]
+  DEM kinetic energy [translation, rotation; J]: [2.7808092240856762e-06, 9.290843158183471e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.08385093167701864, 'density_tv': 0.08074534161490683, 'group0_tv': 0.10559006211180125, 'group1_tv': 0.062111801242236024}
+    Constant velocity: {'group_density_tv': 0.391304347826087, 'density_tv': 0.391304347826087, 'group0_tv': 0.42857142857142855, 'group1_tv': 0.35403726708074534}
+    Gravity only: {'group_density_tv': 0.7888198757763976, 'density_tv': 0.7888198757763976, 'group0_tv': 0.7639751552795031, 'group1_tv': 0.8136645962732919}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.06521739130434782, 'density_tv': 0.06521739130434782, 'group0_tv': 0.055900621118012424, 'group1_tv': 0.07453416149068323}
+    Constant velocity: {'group_density_tv': 0.30745341614906835, 'density_tv': 0.30745341614906835, 'group0_tv': 0.34782608695652173, 'group1_tv': 0.2670807453416149}
+    Gravity only: {'group_density_tv': 0.7732919254658385, 'density_tv': 0.7732919254658385, 'group0_tv': 0.7329192546583851, 'group1_tv': 0.8136645962732919}
+  DEM step 14000, one-step RMSE: [2.883961046004798e-08, 0.00044646885219179824, 0.6353543198090493]
+  One-step / autonomous / DEM rotational energy [J]: 9.130352781501355e-07 1.113644550521693e-06 9.175423320660619e-07
+  Elapsed [s]: 0.040000
+  Mixing [score, coverage], ML: (0.0829965817172641, 0.8509316770186336)
+  Mixing [score, coverage], DEM: (0.03859160163507991, 0.8322981366459627)
+  Rotational energy absolute error [J]: 1.96102218455631e-07
+Prediction 800, DEM step 14000:
+Prediction 800:
+  Model RMSE: [0.00017257481232084803, 0.01958960931408964, 23.860023127121774]
+  Constant velocity RMSE: [0.0016389124068051267, 0.051474009854566904, 37.99435284612693]
+  Gravity only RMSE: [0.004509393733843239, 0.21996669153002152, 37.99435284612693]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.0345511900517977e-06, 1.113644550521693e-06]
+  DEM kinetic energy [translation, rotation; J]: [2.8363434662167546e-06, 9.175423320660619e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.07453416149068323, 'density_tv': 0.06832298136645963, 'group0_tv': 0.09316770186335403, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.3944099378881988, 'density_tv': 0.3944099378881988, 'group0_tv': 0.4472049689440994, 'group1_tv': 0.3416149068322981}
+    Gravity only: {'group_density_tv': 0.8260869565217391, 'density_tv': 0.8260869565217391, 'group0_tv': 0.8074534161490683, 'group1_tv': 0.84472049689441}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.06521739130434782, 'density_tv': 0.062111801242236024, 'group0_tv': 0.049689440993788817, 'group1_tv': 0.08074534161490683}
+    Constant velocity: {'group_density_tv': 0.3105590062111801, 'density_tv': 0.3105590062111801, 'group0_tv': 0.35403726708074534, 'group1_tv': 0.2670807453416149}
+    Gravity only: {'group_density_tv': 0.8074534161490683, 'density_tv': 0.8074534161490683, 'group0_tv': 0.7701863354037267, 'group1_tv': 0.84472049689441}
+  DEM step 14200, one-step RMSE: [3.19029524708146e-08, 0.0005007206113306018, 0.8360614538729588]
+  One-step / autonomous / DEM rotational energy [J]: 9.156444543368019e-07 1.1395960471860233e-06 9.195356536921712e-07
+  Elapsed [s]: 0.041000
+  Mixing [score, coverage], ML: (0.08297446698725675, 0.8509316770186336)
+  Mixing [score, coverage], DEM: (0.06249349684132288, 0.8322981366459627)
+  Rotational energy absolute error [J]: 2.200603934938521e-07
+Prediction 820, DEM step 14200:
+Prediction 820:
+  Model RMSE: [0.0001790961197033458, 0.018523932577543735, 23.926086634040583]
+  Constant velocity RMSE: [0.0016859668165546142, 0.052178311945229046, 38.06457244168608]
+  Gravity only RMSE: [0.00472780068785713, 0.22430885051986865, 38.06457244168608]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.03501416032294e-06, 1.1395960471860233e-06]
+  DEM kinetic energy [translation, rotation; J]: [2.961721084854583e-06, 9.195356536921712e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.052795031055900624, 'density_tv': 0.049689440993788817, 'group0_tv': 0.06832298136645963, 'group1_tv': 0.037267080745341616}
+    Constant velocity: {'group_density_tv': 0.40683229813664595, 'density_tv': 0.40683229813664595, 'group0_tv': 0.4658385093167702, 'group1_tv': 0.34782608695652173}
+    Gravity only: {'group_density_tv': 0.8354037267080745, 'density_tv': 0.8354037267080745, 'group0_tv': 0.8198757763975155, 'group1_tv': 0.8509316770186336}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.062111801242236024, 'density_tv': 0.062111801242236024, 'group0_tv': 0.049689440993788817, 'group1_tv': 0.07453416149068323}
+    Constant velocity: {'group_density_tv': 0.3105590062111801, 'density_tv': 0.3105590062111801, 'group0_tv': 0.35403726708074534, 'group1_tv': 0.2670807453416149}
+    Gravity only: {'group_density_tv': 0.8198757763975155, 'density_tv': 0.8198757763975155, 'group0_tv': 0.7888198757763976, 'group1_tv': 0.8509316770186336}
+  DEM step 14400, one-step RMSE: [3.34332257331998e-08, 0.0004204206315809074, 0.6415940831578066]
+  One-step / autonomous / DEM rotational energy [J]: 9.199034021356166e-07 1.1407522308717634e-06 9.224569134989119e-07
+  Elapsed [s]: 0.042000
+  Mixing [score, coverage], ML: (0.08238707541429546, 0.8478260869565217)
+  Mixing [score, coverage], DEM: (0.06207635846159609, 0.8291925465838509)
+  Rotational energy absolute error [J]: 2.1829531737285156e-07
+Prediction 840, DEM step 14400:
+Prediction 840:
+  Model RMSE: [0.00018529766890298046, 0.019183865588337345, 24.867601444769953]
+  Constant velocity RMSE: [0.0017334005206592602, 0.052284840870049004, 37.513577907466306]
+  Gravity only RMSE: [0.004951218346800594, 0.2293177571814553, 37.513577907466306]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.1157927188665833e-06, 1.1407522308717634e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.0135102724968725e-06, 9.224569134989119e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.055900621118012424, 'density_tv': 0.052795031055900624, 'group0_tv': 0.055900621118012424, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.4161490683229814, 'density_tv': 0.4161490683229814, 'group0_tv': 0.4658385093167702, 'group1_tv': 0.36645962732919257}
+    Gravity only: {'group_density_tv': 0.8540372670807453, 'density_tv': 0.8540372670807453, 'group0_tv': 0.8322981366459627, 'group1_tv': 0.8757763975155279}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.062111801242236024, 'density_tv': 0.062111801242236024, 'group0_tv': 0.043478260869565216, 'group1_tv': 0.08074534161490683}
+    Constant velocity: {'group_density_tv': 0.3136645962732919, 'density_tv': 0.3136645962732919, 'group0_tv': 0.35403726708074534, 'group1_tv': 0.2732919254658385}
+    Gravity only: {'group_density_tv': 0.8478260869565217, 'density_tv': 0.8478260869565217, 'group0_tv': 0.8260869565217391, 'group1_tv': 0.8695652173913043}
+  DEM step 14600, one-step RMSE: [3.044109956876974e-08, 0.0004530240883904595, 0.5804501347031176]
+  One-step / autonomous / DEM rotational energy [J]: 9.224333672994847e-07 1.1466561574386443e-06 9.257159418587904e-07
+  Elapsed [s]: 0.043000
+  Mixing [score, coverage], ML: (0.08262595174976706, 0.8416149068322981)
+  Mixing [score, coverage], DEM: (0.0620128402766168, 0.8322981366459627)
+  Rotational energy absolute error [J]: 2.2094021557985393e-07
+Prediction 860, DEM step 14600:
+Prediction 860:
+  Model RMSE: [0.000191951876053691, 0.019763014377832552, 24.674250232206656]
+  Constant velocity RMSE: [0.0017808354194205197, 0.05260793290263441, 37.516984059302175]
+  Gravity only RMSE: [0.0051795955356174084, 0.2345741348688602, 37.516984059302175]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.0916344699319473e-06, 1.1466561574386443e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.1238175059741768e-06, 9.257159418587904e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.062111801242236024, 'density_tv': 0.059006211180124224, 'group0_tv': 0.055900621118012424, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.43167701863354035, 'density_tv': 0.43167701863354035, 'group0_tv': 0.4720496894409938, 'group1_tv': 0.391304347826087}
+    Gravity only: {'group_density_tv': 0.8664596273291926, 'density_tv': 0.8664596273291926, 'group0_tv': 0.84472049689441, 'group1_tv': 0.8881987577639752}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.055900621118012424, 'density_tv': 0.055900621118012424, 'group0_tv': 0.043478260869565216, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.3136645962732919, 'density_tv': 0.3136645962732919, 'group0_tv': 0.34782608695652173, 'group1_tv': 0.2795031055900621}
+    Gravity only: {'group_density_tv': 0.8633540372670807, 'density_tv': 0.8633540372670807, 'group0_tv': 0.84472049689441, 'group1_tv': 0.8819875776397516}
+  DEM step 14800, one-step RMSE: [3.0420998035486575e-08, 0.0004400509175507508, 0.6188630310906486]
+  One-step / autonomous / DEM rotational energy [J]: 9.147355748094537e-07 1.1448820796094946e-06 9.167605976179948e-07
+  Elapsed [s]: 0.044000
+  Mixing [score, coverage], ML: (0.08262595174976706, 0.8416149068322981)
+  Mixing [score, coverage], DEM: (0.06201284027661691, 0.8322981366459627)
+  Rotational energy absolute error [J]: 2.281214819914998e-07
+Prediction 880, DEM step 14800:
+Prediction 880:
+  Model RMSE: [0.0001989412098893457, 0.020857598686041597, 25.711780102114826]
+  Constant velocity RMSE: [0.00182866214116358, 0.0537982944930638, 37.31242209832615]
+  Gravity only RMSE: [0.005413367289674064, 0.24023667816557587, 37.31242209832615]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.0340271678125965e-06, 1.1448820796094946e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.237921020712522e-06, 9.167605976179948e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.062111801242236024, 'density_tv': 0.059006211180124224, 'group0_tv': 0.055900621118012424, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.43167701863354035, 'density_tv': 0.43167701863354035, 'group0_tv': 0.4782608695652174, 'group1_tv': 0.38509316770186336}
+    Gravity only: {'group_density_tv': 0.8819875776397516, 'density_tv': 0.8819875776397516, 'group0_tv': 0.8633540372670807, 'group1_tv': 0.9006211180124224}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.07142857142857142, 'density_tv': 0.07142857142857142, 'group0_tv': 0.062111801242236024, 'group1_tv': 0.08074534161490683}
+    Constant velocity: {'group_density_tv': 0.3167701863354037, 'density_tv': 0.3167701863354037, 'group0_tv': 0.3416149068322981, 'group1_tv': 0.2919254658385093}
+    Gravity only: {'group_density_tv': 0.8788819875776398, 'density_tv': 0.8788819875776398, 'group0_tv': 0.8633540372670807, 'group1_tv': 0.8944099378881988}
+  DEM step 15000, one-step RMSE: [3.630552010701029e-08, 0.0004973827896555454, 0.6573055600327572]
+  One-step / autonomous / DEM rotational energy [J]: 9.147331154095738e-07 1.1414066399440418e-06 9.178564963122495e-07
+  Elapsed [s]: 0.045000
+  Mixing [score, coverage], ML: (0.08325883531175504, 0.8354037267080745)
+  Mixing [score, coverage], DEM: (0.08212515209931215, 0.8198757763975155)
+  Rotational energy absolute error [J]: 2.235501436317923e-07
+Prediction 900, DEM step 15000:
+Prediction 900:
+  Model RMSE: [0.00020581147184168367, 0.022061664527398224, 24.699762384239946]
+  Constant velocity RMSE: [0.0018770912514706262, 0.05353991338463854, 37.78562636868095]
+  Gravity only RMSE: [0.005652849241648246, 0.2456066111671295, 37.78562636868095]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.076929709101675e-06, 1.1414066399440418e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.2596648180971542e-06, 9.178564963122495e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.059006211180124224, 'density_tv': 0.055900621118012424, 'group0_tv': 0.055900621118012424, 'group1_tv': 0.062111801242236024}
+    Constant velocity: {'group_density_tv': 0.43167701863354035, 'density_tv': 0.43167701863354035, 'group0_tv': 0.4782608695652174, 'group1_tv': 0.38509316770186336}
+    Gravity only: {'group_density_tv': 0.8944099378881988, 'density_tv': 0.8944099378881988, 'group0_tv': 0.8881987577639752, 'group1_tv': 0.9006211180124224}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.07142857142857142, 'density_tv': 0.07142857142857142, 'group0_tv': 0.06832298136645963, 'group1_tv': 0.07453416149068323}
+    Constant velocity: {'group_density_tv': 0.3167701863354037, 'density_tv': 0.3167701863354037, 'group0_tv': 0.3416149068322981, 'group1_tv': 0.2919254658385093}
+    Gravity only: {'group_density_tv': 0.8944099378881988, 'density_tv': 0.8944099378881988, 'group0_tv': 0.8881987577639752, 'group1_tv': 0.9006211180124224}
+  DEM step 15200, one-step RMSE: [3.601382212688981e-08, 0.0005208350318663415, 0.7493835046305185]
+  One-step / autonomous / DEM rotational energy [J]: 9.295575972126317e-07 1.1698228207430006e-06 9.314071767982913e-07
+  Elapsed [s]: 0.046000
+  Mixing [score, coverage], ML: (0.07111866211130946, 0.8322981366459627)
+  Mixing [score, coverage], DEM: (0.08180210735766291, 0.8229813664596274)
+  Rotational energy absolute error [J]: 2.384156439447093e-07
+Prediction 920, DEM step 15200:
+Prediction 920:
+  Model RMSE: [0.00021247845830094496, 0.021886431369783608, 25.696376731226696]
+  Constant velocity RMSE: [0.001924950024376627, 0.05306846632265801, 37.93286345067397]
+  Gravity only RMSE: [0.005897945751359588, 0.25144362352761024, 37.93286345067397]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.0915617226580112e-06, 1.1698228207430006e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.3068780217448573e-06, 9.314071767982913e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.06521739130434782, 'density_tv': 0.062111801242236024, 'group0_tv': 0.062111801242236024, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.4409937888198758, 'density_tv': 0.4409937888198758, 'group0_tv': 0.484472049689441, 'group1_tv': 0.39751552795031053}
+    Gravity only: {'group_density_tv': 0.9161490683229814, 'density_tv': 0.9161490683229814, 'group0_tv': 0.9006211180124224, 'group1_tv': 0.9316770186335404}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.06521739130434782, 'density_tv': 0.06521739130434782, 'group0_tv': 0.062111801242236024, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.3167701863354037, 'density_tv': 0.3167701863354037, 'group0_tv': 0.34782608695652173, 'group1_tv': 0.2857142857142857}
+    Gravity only: {'group_density_tv': 0.9161490683229814, 'density_tv': 0.9161490683229814, 'group0_tv': 0.9006211180124224, 'group1_tv': 0.9316770186335404}
+  DEM step 15400, one-step RMSE: [3.45027741688961e-08, 0.0005318150709150868, 0.7123117801134825]
+  One-step / autonomous / DEM rotational energy [J]: 9.384928832334986e-07 1.1883986787045412e-06 9.408756331402655e-07
+  Elapsed [s]: 0.047000
+  Mixing [score, coverage], ML: (0.07059162504802152, 0.8385093167701864)
+  Mixing [score, coverage], DEM: (0.08212515209931237, 0.8198757763975155)
+  Rotational energy absolute error [J]: 2.475230455642758e-07
+Prediction 940, DEM step 15400:
+Prediction 940:
+  Model RMSE: [0.00021931539913514492, 0.022191006000553078, 26.596575276109764]
+  Constant velocity RMSE: [0.001972395960815096, 0.05329011345296062, 38.135148248687656]
+  Gravity only RMSE: [0.006148372729334868, 0.25673379415200404, 38.135148248687656]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.2028035564359016e-06, 1.1883986787045412e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.40875083700495e-06, 9.408756331402655e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.06832298136645963, 'density_tv': 0.06521739130434782, 'group0_tv': 0.062111801242236024, 'group1_tv': 0.07453416149068323}
+    Constant velocity: {'group_density_tv': 0.4409937888198758, 'density_tv': 0.4409937888198758, 'group0_tv': 0.484472049689441, 'group1_tv': 0.39751552795031053}
+    Gravity only: {'group_density_tv': 0.922360248447205, 'density_tv': 0.922360248447205, 'group0_tv': 0.906832298136646, 'group1_tv': 0.937888198757764}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.059006211180124224, 'density_tv': 0.055900621118012424, 'group0_tv': 0.049689440993788817, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.32608695652173914, 'density_tv': 0.32608695652173914, 'group0_tv': 0.35403726708074534, 'group1_tv': 0.2981366459627329}
+    Gravity only: {'group_density_tv': 0.922360248447205, 'density_tv': 0.922360248447205, 'group0_tv': 0.906832298136646, 'group1_tv': 0.937888198757764}
+  DEM step 15600, one-step RMSE: [3.980365824536649e-08, 0.000581254812605438, 0.8659503364947505]
+  One-step / autonomous / DEM rotational energy [J]: 9.321501854098234e-07 1.2199763757544202e-06 9.355906196615313e-07
+  Elapsed [s]: 0.048000
+  Mixing [score, coverage], ML: (0.09049355993800445, 0.8291925465838509)
+  Mixing [score, coverage], DEM: (0.08335047532633189, 0.8074534161490683)
+  Rotational energy absolute error [J]: 2.843857560928889e-07
+Prediction 960, DEM step 15600:
+Prediction 960:
+  Model RMSE: [0.00022691676785605933, 0.0217795691607763, 27.03124570379062]
+  Constant velocity RMSE: [0.0020198952893782747, 0.05265475812890345, 38.100675070417786]
+  Gravity only RMSE: [0.006404120072244321, 0.2615822634602638, 38.100675070417786]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.3797205407150245e-06, 1.2199763757544202e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.463067209148551e-06, 9.355906196615313e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.07142857142857142, 'density_tv': 0.06832298136645963, 'group0_tv': 0.062111801242236024, 'group1_tv': 0.08074534161490683}
+    Constant velocity: {'group_density_tv': 0.45652173913043476, 'density_tv': 0.45652173913043476, 'group0_tv': 0.5093167701863354, 'group1_tv': 0.40372670807453415}
+    Gravity only: {'group_density_tv': 0.9472049689440993, 'density_tv': 0.9472049689440993, 'group0_tv': 0.9440993788819876, 'group1_tv': 0.9503105590062112}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.06521739130434782, 'density_tv': 0.062111801242236024, 'group0_tv': 0.06832298136645963, 'group1_tv': 0.062111801242236024}
+    Constant velocity: {'group_density_tv': 0.33229813664596275, 'density_tv': 0.33229813664596275, 'group0_tv': 0.36024844720496896, 'group1_tv': 0.30434782608695654}
+    Gravity only: {'group_density_tv': 0.9472049689440993, 'density_tv': 0.9472049689440993, 'group0_tv': 0.9440993788819876, 'group1_tv': 0.9503105590062112}
+  DEM step 15800, one-step RMSE: [4.485848134855932e-08, 0.0006757530855708249, 1.0314866114090582]
+  One-step / autonomous / DEM rotational energy [J]: 9.678598870718305e-07 1.2310533477747423e-06 9.712622107623598e-07
+  Elapsed [s]: 0.049000
+  Mixing [score, coverage], ML: (0.09256354332690231, 0.8105590062111802)
+  Mixing [score, coverage], DEM: (0.08215817577030815, 0.8198757763975155)
+  Rotational energy absolute error [J]: 2.5979113701238253e-07
+Prediction 980, DEM step 15800:
+Prediction 980:
+  Model RMSE: [0.00023531081925977108, 0.022973300355562106, 28.607883987476953]
+  Constant velocity RMSE: [0.00206662266194688, 0.05264693659426074, 38.86360800493716]
+  Gravity only RMSE: [0.006665569092398871, 0.2682841067640557, 38.86360800493716]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.3260077226956536e-06, 1.2310533477747423e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.397286149682867e-06, 9.712622107623598e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.07142857142857142, 'density_tv': 0.06521739130434782, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.453416149068323, 'density_tv': 0.453416149068323, 'group0_tv': 0.5093167701863354, 'group1_tv': 0.39751552795031053}
+    Gravity only: {'group_density_tv': 0.968944099378882, 'density_tv': 0.968944099378882, 'group0_tv': 0.9751552795031055, 'group1_tv': 0.9627329192546584}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.059006211180124224, 'density_tv': 0.052795031055900624, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.3385093167701863, 'density_tv': 0.3385093167701863, 'group0_tv': 0.37267080745341613, 'group1_tv': 0.30434782608695654}
+    Gravity only: {'group_density_tv': 0.968944099378882, 'density_tv': 0.968944099378882, 'group0_tv': 0.9751552795031055, 'group1_tv': 0.9627329192546584}
+  DEM step 16000, one-step RMSE: [3.1955437297049446e-08, 0.0004713538219830084, 0.5670890081758796]
+  One-step / autonomous / DEM rotational energy [J]: 9.799906803830076e-07 1.2495806577770872e-06 9.815300395014338e-07
+  Elapsed [s]: 0.050000
+  Mixing [score, coverage], ML: (0.09220889373561125, 0.8136645962732919)
+  Mixing [score, coverage], DEM: (0.08220067382088192, 0.8198757763975155)
+  Rotational energy absolute error [J]: 2.6805061827565336e-07
+Prediction 1000, DEM step 16000:
+Prediction 1000:
+  Model RMSE: [0.00024356321511604355, 0.0241382953142271, 29.079857820220713]
+  Constant velocity RMSE: [0.0021133495365381885, 0.053008321932162906, 38.99853771147463]
+  Gravity only RMSE: [0.006933157446639454, 0.2740899819955851, 38.99853771147463]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.3647421868928834e-06, 1.2495806577770872e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.3898629743309977e-06, 9.815300395014338e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.07763975155279502, 'density_tv': 0.07142857142857142, 'group0_tv': 0.08695652173913043, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.46273291925465837, 'density_tv': 0.46273291925465837, 'group0_tv': 0.515527950310559, 'group1_tv': 0.40993788819875776}
+    Gravity only: {'group_density_tv': 0.9782608695652174, 'density_tv': 0.9782608695652174, 'group0_tv': 0.9813664596273292, 'group1_tv': 0.9751552795031055}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.06521739130434782, 'density_tv': 0.062111801242236024, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.33540372670807456, 'density_tv': 0.33540372670807456, 'group0_tv': 0.37267080745341613, 'group1_tv': 0.2981366459627329}
+    Gravity only: {'group_density_tv': 0.9782608695652174, 'density_tv': 0.9782608695652174, 'group0_tv': 0.9813664596273292, 'group1_tv': 0.9751552795031055}
+  DEM step 16200, one-step RMSE: [3.746056485755732e-08, 0.0006270853635630519, 0.906576511796753]
+  One-step / autonomous / DEM rotational energy [J]: 1.0047291323439645e-06 1.2484318263457813e-06 1.0091431434870606e-06
+  Elapsed [s]: 0.051000
+  Mixing [score, coverage], ML: (0.09185961762297634, 0.8167701863354038)
+  Mixing [score, coverage], DEM: (0.08028067920081416, 0.8291925465838509)
+  Rotational energy absolute error [J]: 2.3928868285872074e-07
+Prediction 1020, DEM step 16200:
+Prediction 1020:
+  Model RMSE: [0.00025221570357240457, 0.024823919901163, 29.597564590259076]
+  Constant velocity RMSE: [0.0021604339977403745, 0.05285739723686145, 39.31048527559607]
+  Gravity only RMSE: [0.0072065555076717865, 0.2797871006319862, 39.31048527559607]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.3798087744491173e-06, 1.2484318263457813e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.279381345939614e-06, 1.0091431434870606e-06]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.07142857142857142, 'density_tv': 0.06521739130434782, 'group0_tv': 0.08695652173913043, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.46273291925465837, 'density_tv': 0.46273291925465837, 'group0_tv': 0.5093167701863354, 'group1_tv': 0.4161490683229814}
+    Gravity only: {'group_density_tv': 0.9875776397515528, 'density_tv': 0.9875776397515528, 'group0_tv': 0.9875776397515528, 'group1_tv': 0.9875776397515528}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.059006211180124224, 'density_tv': 0.055900621118012424, 'group0_tv': 0.062111801242236024, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.35093167701863354, 'density_tv': 0.35093167701863354, 'group0_tv': 0.391304347826087, 'group1_tv': 0.3105590062111801}
+    Gravity only: {'group_density_tv': 0.9875776397515528, 'density_tv': 0.9875776397515528, 'group0_tv': 0.9875776397515528, 'group1_tv': 0.9875776397515528}
+  DEM step 16400, one-step RMSE: [3.3184071549108855e-08, 0.0004957088976368074, 0.677039340356295]
+  One-step / autonomous / DEM rotational energy [J]: 9.893077202149287e-07 1.2374489791030734e-06 9.935242247412285e-07
+  Elapsed [s]: 0.052000
+  Mixing [score, coverage], ML: (0.09901502588069755, 0.8260869565217391)
+  Mixing [score, coverage], DEM: (0.08227994938132732, 0.8167701863354038)
+  Rotational energy absolute error [J]: 2.43924754361845e-07
+Prediction 1040, DEM step 16400:
+Prediction 1040:
+  Model RMSE: [0.0002608267501130832, 0.02509358534374449, 30.01853216634831]
+  Constant velocity RMSE: [0.0022071575047301123, 0.05303030888365246, 39.24832264873975]
+  Gravity only RMSE: [0.007485714568549461, 0.28564859167423984, 39.24832264873975]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.188074321215942e-06, 1.2374489791030734e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.322235852047394e-06, 9.935242247412285e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.08074534161490683, 'density_tv': 0.07453416149068323, 'group0_tv': 0.08695652173913043, 'group1_tv': 0.07453416149068323}
+    Constant velocity: {'group_density_tv': 0.4658385093167702, 'density_tv': 0.4658385093167702, 'group0_tv': 0.5093167701863354, 'group1_tv': 0.422360248447205}
+    Gravity only: {'group_density_tv': 0.9906832298136646, 'density_tv': 0.9906832298136646, 'group0_tv': 0.9875776397515528, 'group1_tv': 0.9937888198757764}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.062111801242236024, 'density_tv': 0.062111801242236024, 'group0_tv': 0.06832298136645963, 'group1_tv': 0.055900621118012424}
+    Constant velocity: {'group_density_tv': 0.34782608695652173, 'density_tv': 0.34782608695652173, 'group0_tv': 0.391304347826087, 'group1_tv': 0.30434782608695654}
+    Gravity only: {'group_density_tv': 0.9906832298136646, 'density_tv': 0.9906832298136646, 'group0_tv': 0.9875776397515528, 'group1_tv': 0.9937888198757764}
+  DEM step 16600, one-step RMSE: [3.311693051961804e-08, 0.00041519095960778073, 0.5480729586799125]
+  One-step / autonomous / DEM rotational energy [J]: 1.0062891170450647e-06 1.1561223706972662e-06 1.0089763852713769e-06
+  Elapsed [s]: 0.053000
+  Mixing [score, coverage], ML: (0.09865106087328313, 0.8291925465838509)
+  Mixing [score, coverage], DEM: (0.08254056170042634, 0.8136645962732919)
+  Rotational energy absolute error [J]: 1.4714598542588932e-07
+Prediction 1060, DEM step 16600:
+Prediction 1060:
+  Model RMSE: [0.00026907891080981035, 0.026271175150991193, 29.720891998834496]
+  Constant velocity RMSE: [0.0022543650382866494, 0.05330509154539795, 38.796357496311394]
+  Gravity only RMSE: [0.007770463417038487, 0.29054174993650606, 38.796357496311394]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [3.0334692268415033e-06, 1.1561223706972662e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.3869268903738694e-06, 1.0089763852713769e-06]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.08074534161490683, 'density_tv': 0.07453416149068323, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.08695652173913043}
+    Constant velocity: {'group_density_tv': 0.45962732919254656, 'density_tv': 0.45962732919254656, 'group0_tv': 0.4968944099378882, 'group1_tv': 0.422360248447205}
+    Gravity only: {'group_density_tv': 0.9906832298136646, 'density_tv': 0.9906832298136646, 'group0_tv': 0.9875776397515528, 'group1_tv': 0.9937888198757764}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.059006211180124224, 'density_tv': 0.059006211180124224, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.043478260869565216}
+    Constant velocity: {'group_density_tv': 0.36024844720496896, 'density_tv': 0.36024844720496896, 'group0_tv': 0.40993788819875776, 'group1_tv': 0.3105590062111801}
+    Gravity only: {'group_density_tv': 0.9906832298136646, 'density_tv': 0.9906832298136646, 'group0_tv': 0.9875776397515528, 'group1_tv': 0.9937888198757764}
+  DEM step 16800, one-step RMSE: [5.127632214160495e-08, 0.0006032749881636344, 0.9264872282209472]
+  One-step / autonomous / DEM rotational energy [J]: 9.78995592290063e-07 1.1109050731460229e-06 9.836912705934257e-07
+  Elapsed [s]: 0.054000
+  Mixing [score, coverage], ML: (0.09975949975949971, 0.8198757763975155)
+  Mixing [score, coverage], DEM: (0.08379644338350833, 0.8012422360248447)
+  Rotational energy absolute error [J]: 1.2721380255259721e-07
+Prediction 1080, DEM step 16800:
+Prediction 1080:
+  Model RMSE: [0.00027637595357597923, 0.027653653103622555, 29.482209305389627]
+  Constant velocity RMSE: [0.0023014435930081177, 0.05276126732315966, 38.47176023914775]
+  Gravity only RMSE: [0.008060224285357643, 0.2965052017058967, 38.47176023914775]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.856652387219421e-06, 1.1109050731460229e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.175708725259506e-06, 9.836912705934257e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.08385093167701864, 'density_tv': 0.07763975155279502, 'group0_tv': 0.06832298136645963, 'group1_tv': 0.09937888198757763}
+    Constant velocity: {'group_density_tv': 0.4658385093167702, 'density_tv': 0.4658385093167702, 'group0_tv': 0.5093167701863354, 'group1_tv': 0.422360248447205}
+    Gravity only: {'group_density_tv': 0.9937888198757764, 'density_tv': 0.9937888198757764, 'group0_tv': 0.9937888198757764, 'group1_tv': 0.9937888198757764}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.062111801242236024, 'density_tv': 0.062111801242236024, 'group0_tv': 0.062111801242236024, 'group1_tv': 0.062111801242236024}
+    Constant velocity: {'group_density_tv': 0.36645962732919257, 'density_tv': 0.36645962732919257, 'group0_tv': 0.4161490683229814, 'group1_tv': 0.3167701863354037}
+    Gravity only: {'group_density_tv': 0.9937888198757764, 'density_tv': 0.9937888198757764, 'group0_tv': 0.9937888198757764, 'group1_tv': 0.9937888198757764}
+  DEM step 17000, one-step RMSE: [4.052849490811087e-08, 0.0005925603306564671, 0.9006435007841352]
+  One-step / autonomous / DEM rotational energy [J]: 9.55217882155295e-07 1.059367555461583e-06 9.55742224235365e-07
+  Elapsed [s]: 0.055000
+  Mixing [score, coverage], ML: (0.10014026120896347, 0.8167701863354038)
+  Mixing [score, coverage], DEM: (0.08379644338350822, 0.8012422360248447)
+  Rotational energy absolute error [J]: 1.0362533122621819e-07
+Prediction 1100, DEM step 17000:
+Prediction 1100:
+  Model RMSE: [0.0002844914145902165, 0.027749517633242182, 28.994891915843247]
+  Constant velocity RMSE: [0.002348726152947617, 0.05312273745593526, 37.927898600995306]
+  Gravity only RMSE: [0.00835686833734335, 0.3031796519057534, 37.927898600995306]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.7648739226848207e-06, 1.059367555461583e-06]
+  DEM kinetic energy [translation, rotation; J]: [3.1347202767468113e-06, 9.55742224235365e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.09006211180124224, 'density_tv': 0.08385093167701864, 'group0_tv': 0.09316770186335403, 'group1_tv': 0.08695652173913043}
+    Constant velocity: {'group_density_tv': 0.45962732919254656, 'density_tv': 0.45962732919254656, 'group0_tv': 0.5031055900621118, 'group1_tv': 0.4161490683229814}
+    Gravity only: {'group_density_tv': 0.9937888198757764, 'density_tv': 0.9937888198757764, 'group0_tv': 0.9937888198757764, 'group1_tv': 0.9937888198757764}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.062111801242236024, 'density_tv': 0.062111801242236024, 'group0_tv': 0.055900621118012424, 'group1_tv': 0.06832298136645963}
+    Constant velocity: {'group_density_tv': 0.37267080745341613, 'density_tv': 0.37267080745341613, 'group0_tv': 0.42857142857142855, 'group1_tv': 0.3167701863354037}
+    Gravity only: {'group_density_tv': 0.9937888198757764, 'density_tv': 0.9937888198757764, 'group0_tv': 0.9937888198757764, 'group1_tv': 0.9937888198757764}
+  DEM step 17200, one-step RMSE: [4.4002782482020434e-08, 0.0005714838467962984, 0.7030993393797316]
+  One-step / autonomous / DEM rotational energy [J]: 9.496022086950013e-07 1.010000889702067e-06 9.535270127917365e-07
+  Elapsed [s]: 0.056000
+  Mixing [score, coverage], ML: (0.1009194939427498, 0.8105590062111802)
+  Mixing [score, coverage], DEM: (0.08348395371033168, 0.8043478260869565)
+  Rotational energy absolute error [J]: 5.647387691033056e-08
+Prediction 1120, DEM step 17200:
+Prediction 1120:
+  Model RMSE: [0.0002928880861304797, 0.02662136172052356, 29.710296926442957]
+  Constant velocity RMSE: [0.0023958955467383463, 0.052555104351381506, 37.8398025392841]
+  Gravity only RMSE: [0.008659874004039734, 0.309331072827788, 37.8398025392841]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.5507415912340083e-06, 1.010000889702067e-06]
+  DEM kinetic energy [translation, rotation; J]: [2.984164771373514e-06, 9.535270127917365e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.08074534161490683, 'density_tv': 0.07453416149068323, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.08074534161490683}
+    Constant velocity: {'group_density_tv': 0.45652173913043476, 'density_tv': 0.45652173913043476, 'group0_tv': 0.4968944099378882, 'group1_tv': 0.4161490683229814}
+    Gravity only: {'group_density_tv': 0.9968944099378882, 'density_tv': 0.9968944099378882, 'group0_tv': 1.0, 'group1_tv': 0.9937888198757764}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.07453416149068323, 'density_tv': 0.07142857142857142, 'group0_tv': 0.06832298136645963, 'group1_tv': 0.08074534161490683}
+    Constant velocity: {'group_density_tv': 0.37267080745341613, 'density_tv': 0.37267080745341613, 'group0_tv': 0.42857142857142855, 'group1_tv': 0.3167701863354037}
+    Gravity only: {'group_density_tv': 0.9968944099378882, 'density_tv': 0.9968944099378882, 'group0_tv': 1.0, 'group1_tv': 0.9937888198757764}
+  DEM step 17400, one-step RMSE: [4.133713804410539e-08, 0.0006559160357870136, 0.9351336897942026]
+  One-step / autonomous / DEM rotational energy [J]: 9.59969893608304e-07 9.651593581392548e-07 9.671045104737477e-07
+  Elapsed [s]: 0.057000
+  Mixing [score, coverage], ML: (0.10245226349877512, 0.8105590062111802)
+  Mixing [score, coverage], DEM: (0.08182350057350063, 0.8136645962732919)
+  Rotational energy absolute error [J]: 1.945152334492918e-09
+Prediction 1140, DEM step 17400:
+Prediction 1140:
+  Model RMSE: [0.0003010313501491623, 0.02702633572733486, 30.045095250298516]
+  Constant velocity RMSE: [0.002442089752008557, 0.05220936982115938, 37.91241025015883]
+  Gravity only RMSE: [0.008968809793673321, 0.31551320953101253, 37.91241025015883]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.4584572281608445e-06, 9.651593581392548e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.8726347761230135e-06, 9.671045104737477e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.07763975155279502, 'density_tv': 0.07453416149068323, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.08074534161490683}
+    Constant velocity: {'group_density_tv': 0.45962732919254656, 'density_tv': 0.45962732919254656, 'group0_tv': 0.4906832298136646, 'group1_tv': 0.42857142857142855}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08074534161490683, 'density_tv': 0.07763975155279502, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.08695652173913043}
+    Constant velocity: {'group_density_tv': 0.37267080745341613, 'density_tv': 0.37267080745341613, 'group0_tv': 0.42857142857142855, 'group1_tv': 0.3167701863354037}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 17600, one-step RMSE: [3.684143561303147e-08, 0.0005425537888153075, 0.6974077820974353]
+  One-step / autonomous / DEM rotational energy [J]: 9.210426563492214e-07 9.409763727351308e-07 9.226371618693743e-07
+  Elapsed [s]: 0.058000
+  Mixing [score, coverage], ML: (0.1032436121713316, 0.8043478260869565)
+  Mixing [score, coverage], DEM: (0.08103871319520195, 0.8105590062111802)
+  Rotational energy absolute error [J]: 1.833921086575654e-08
+Prediction 1160, DEM step 17600:
+Prediction 1160:
+  Model RMSE: [0.000309753567081549, 0.027320912692694842, 30.123576798722425]
+  Constant velocity RMSE: [0.0024880507108324614, 0.05151145318234446, 37.34617478929316]
+  Gravity only RMSE: [0.009284267157489747, 0.321843445834936, 37.34617478929316]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.383902999705562e-06, 9.409763727351308e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.717795208311616e-06, 9.226371618693743e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.08074534161490683, 'density_tv': 0.07763975155279502, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.08074534161490683}
+    Constant velocity: {'group_density_tv': 0.4720496894409938, 'density_tv': 0.4720496894409938, 'group0_tv': 0.4906832298136646, 'group1_tv': 0.453416149068323}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08074534161490683, 'density_tv': 0.07763975155279502, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.08074534161490683}
+    Constant velocity: {'group_density_tv': 0.38198757763975155, 'density_tv': 0.38198757763975155, 'group0_tv': 0.4472049689440994, 'group1_tv': 0.3167701863354037}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 17800, one-step RMSE: [4.3988583182309046e-08, 0.0006230910719932402, 1.0874068155396432]
+  One-step / autonomous / DEM rotational energy [J]: 8.841313636711026e-07 9.025308863829496e-07 8.901850028077204e-07
+  Elapsed [s]: 0.059000
+  Mixing [score, coverage], ML: (0.10283880796928901, 0.8074534161490683)
+  Mixing [score, coverage], DEM: (0.08665458937198067, 0.7608695652173914)
+  Rotational energy absolute error [J]: 1.234588357522915e-08
+Prediction 1180, DEM step 17800:
+Prediction 1180:
+  Model RMSE: [0.0003188349670816808, 0.02547659661972339, 30.14799951951462]
+  Constant velocity RMSE: [0.002533045278156888, 0.05003357953457142, 37.45407370515811]
+  Gravity only RMSE: [0.00960536260143596, 0.3274142061090024, 37.45407370515811]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.28910682238679e-06, 9.025308863829496e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.3927739183297065e-06, 8.901850028077204e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.08074534161490683, 'density_tv': 0.07763975155279502, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.08074534161490683}
+    Constant velocity: {'group_density_tv': 0.4968944099378882, 'density_tv': 0.4968944099378882, 'group0_tv': 0.5093167701863354, 'group1_tv': 0.484472049689441}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08695652173913043, 'density_tv': 0.08385093167701864, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.09316770186335403}
+    Constant velocity: {'group_density_tv': 0.391304347826087, 'density_tv': 0.391304347826087, 'group0_tv': 0.453416149068323, 'group1_tv': 0.32919254658385094}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 18000, one-step RMSE: [4.886814489763563e-08, 0.0007538386427302619, 1.2006952320933963]
+  One-step / autonomous / DEM rotational energy [J]: 8.067073620304488e-07 8.884323977735564e-07 8.135349872024511e-07
+  Elapsed [s]: 0.060000
+  Mixing [score, coverage], ML: (0.10526836892164271, 0.7888198757763976)
+  Mixing [score, coverage], DEM: (0.08473875661375652, 0.7763975155279503)
+  Rotational energy absolute error [J]: 7.489741057110523e-08
+Prediction 1200, DEM step 18000:
+Prediction 1200:
+  Model RMSE: [0.00032788256671459825, 0.02513629598966097, 29.017828281376833]
+  Constant velocity RMSE: [0.0025777662322494345, 0.04945997032407837, 37.122064776418895]
+  Gravity only RMSE: [0.009933219377909017, 0.334920995683107, 37.122064776418895]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.1066087255315382e-06, 8.884323977735564e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.132412306747517e-06, 8.135349872024511e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.08074534161490683, 'density_tv': 0.07763975155279502, 'group0_tv': 0.08695652173913043, 'group1_tv': 0.07453416149068323}
+    Constant velocity: {'group_density_tv': 0.5031055900621118, 'density_tv': 0.5031055900621118, 'group0_tv': 0.5217391304347826, 'group1_tv': 0.484472049689441}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08385093167701864, 'density_tv': 0.08074534161490683, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.09316770186335403}
+    Constant velocity: {'group_density_tv': 0.40993788819875776, 'density_tv': 0.40993788819875776, 'group0_tv': 0.4658385093167702, 'group1_tv': 0.35403726708074534}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 18200, one-step RMSE: [3.5768173254596265e-08, 0.0005829766103749995, 0.852718312572402]
+  One-step / autonomous / DEM rotational energy [J]: 7.712333796125217e-07 8.39296936489382e-07 7.742981995407314e-07
+  Elapsed [s]: 0.061000
+  Mixing [score, coverage], ML: (0.11072427524250439, 0.7888198757763976)
+  Mixing [score, coverage], DEM: (0.08366402116402116, 0.7857142857142857)
+  Rotational energy absolute error [J]: 6.499873694865062e-08
+Prediction 1220, DEM step 18200:
+Prediction 1220:
+  Model RMSE: [0.00033627125597430416, 0.025814609166655306, 28.971478349701005]
+  Constant velocity RMSE: [0.002621484321645113, 0.04768014917998316, 36.62478839069188]
+  Gravity only RMSE: [0.01026814230194699, 0.3415666815154134, 36.62478839069188]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [2.0066437012284715e-06, 8.39296936489382e-07]
+  DEM kinetic energy [translation, rotation; J]: [2.0066354716712906e-06, 7.742981995407314e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.09006211180124224, 'density_tv': 0.08385093167701864, 'group0_tv': 0.08695652173913043, 'group1_tv': 0.09316770186335403}
+    Constant velocity: {'group_density_tv': 0.5, 'density_tv': 0.5, 'group0_tv': 0.5217391304347826, 'group1_tv': 0.4782608695652174}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08695652173913043, 'density_tv': 0.08385093167701864, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.09937888198757763}
+    Constant velocity: {'group_density_tv': 0.41304347826086957, 'density_tv': 0.41304347826086957, 'group0_tv': 0.4720496894409938, 'group1_tv': 0.35403726708074534}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 18400, one-step RMSE: [3.403812893950689e-08, 0.0005294674463208323, 0.6017891696654917]
+  One-step / autonomous / DEM rotational energy [J]: 7.200592378909706e-07 7.749670860541929e-07 7.227376260978111e-07
+  Elapsed [s]: 0.062000
+  Mixing [score, coverage], ML: (0.11072427524250439, 0.7888198757763976)
+  Mixing [score, coverage], DEM: (0.09548750334135248, 0.7608695652173914)
+  Rotational energy absolute error [J]: 5.222945995638176e-08
+Prediction 1240, DEM step 18400:
+Prediction 1240:
+  Model RMSE: [0.00034405118561578875, 0.02425309651769864, 28.425473987352717]
+  Constant velocity RMSE: [0.0026637638214370447, 0.04667920713742133, 35.89395601244905]
+  Gravity only RMSE: [0.010609252626828056, 0.3474247400862775, 35.89395601244905]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.7045601159595126e-06, 7.749670860541929e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.8617410534078634e-06, 7.227376260978111e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.08695652173913043, 'density_tv': 0.08385093167701864, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.09937888198757763}
+    Constant velocity: {'group_density_tv': 0.5031055900621118, 'density_tv': 0.5031055900621118, 'group0_tv': 0.5217391304347826, 'group1_tv': 0.484472049689441}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08695652173913043, 'density_tv': 0.08385093167701864, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.09937888198757763}
+    Constant velocity: {'group_density_tv': 0.40683229813664595, 'density_tv': 0.40683229813664595, 'group0_tv': 0.4720496894409938, 'group1_tv': 0.3416149068322981}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 18600, one-step RMSE: [2.8904783007839277e-08, 0.0004685411438703216, 0.5624086324858103]
+  One-step / autonomous / DEM rotational energy [J]: 6.725685735040579e-07 7.068284700841919e-07 6.756895177051822e-07
+  Elapsed [s]: 0.063000
+  Mixing [score, coverage], ML: (0.10900741185897445, 0.8012422360248447)
+  Mixing [score, coverage], DEM: (0.0958407096674877, 0.7577639751552795)
+  Rotational energy absolute error [J]: 3.113895237900972e-08
+Prediction 1260, DEM step 18600:
+Prediction 1260:
+  Model RMSE: [0.0003509392927283615, 0.02291367781311829, 28.208019506599598]
+  Constant velocity RMSE: [0.0027053570405068403, 0.04639095379491439, 35.215972918889534]
+  Gravity only RMSE: [0.01095625568983354, 0.35319034482607903, 35.215972918889534]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.4893929960513676e-06, 7.068284700841919e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.7239653441961824e-06, 6.756895177051822e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.09627329192546584, 'density_tv': 0.09316770186335403, 'group0_tv': 0.08695652173913043, 'group1_tv': 0.10559006211180125}
+    Constant velocity: {'group_density_tv': 0.5093167701863354, 'density_tv': 0.5093167701863354, 'group0_tv': 0.5217391304347826, 'group1_tv': 0.4968944099378882}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08695652173913043, 'density_tv': 0.08385093167701864, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.09937888198757763}
+    Constant velocity: {'group_density_tv': 0.40062111801242234, 'density_tv': 0.40062111801242234, 'group0_tv': 0.4720496894409938, 'group1_tv': 0.32919254658385094}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 18800, one-step RMSE: [4.4334691401972016e-08, 0.0005601436454623727, 0.9147902292013745]
+  One-step / autonomous / DEM rotational energy [J]: 6.308067718979274e-07 6.915033499771652e-07 6.288592844459397e-07
+  Elapsed [s]: 0.064000
+  Mixing [score, coverage], ML: (0.1094399017430514, 0.7981366459627329)
+  Mixing [score, coverage], DEM: (0.0958407096674877, 0.7577639751552795)
+  Rotational energy absolute error [J]: 6.264406553122551e-08
+Prediction 1280, DEM step 18800:
+Prediction 1280:
+  Model RMSE: [0.00035846457409127963, 0.022192067163693586, 27.64559761213688]
+  Constant velocity RMSE: [0.002746867195848635, 0.046048574946441656, 35.0280110791308]
+  Gravity only RMSE: [0.01130878882476912, 0.35867909423910826, 35.0280110791308]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.456919482215404e-06, 6.915033499771652e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.6056692406312443e-06, 6.288592844459397e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.09006211180124224, 'density_tv': 0.08695652173913043, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.09937888198757763}
+    Constant velocity: {'group_density_tv': 0.5124223602484472, 'density_tv': 0.5124223602484472, 'group0_tv': 0.5217391304347826, 'group1_tv': 0.5031055900621118}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08695652173913043, 'density_tv': 0.08385093167701864, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.09937888198757763}
+    Constant velocity: {'group_density_tv': 0.39751552795031053, 'density_tv': 0.39751552795031053, 'group0_tv': 0.4658385093167702, 'group1_tv': 0.32919254658385094}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 19000, one-step RMSE: [3.328250682973622e-08, 0.0005155512987074657, 0.6497734431856331]
+  One-step / autonomous / DEM rotational energy [J]: 5.366900761902724e-07 6.791455924539394e-07 5.387703869602789e-07
+  Elapsed [s]: 0.065000
+  Mixing [score, coverage], ML: (0.11342556451846064, 0.7701863354037267)
+  Mixing [score, coverage], DEM: (0.0958407096674877, 0.7577639751552795)
+  Rotational energy absolute error [J]: 1.4037520549366056e-07
+Prediction 1300, DEM step 19000:
+Prediction 1300:
+  Model RMSE: [0.00036608513281463054, 0.021545694788274557, 26.961935529082165]
+  Constant velocity RMSE: [0.0027888531864457416, 0.04661746313066827, 34.18893242275029]
+  Gravity only RMSE: [0.01166721263344701, 0.36454020445908214, 34.18893242275029]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.397808460310054e-06, 6.791455924539394e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.5618395806375956e-06, 5.387703869602789e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.09316770186335403, 'density_tv': 0.09006211180124224, 'group0_tv': 0.08695652173913043, 'group1_tv': 0.09937888198757763}
+    Constant velocity: {'group_density_tv': 0.5279503105590062, 'density_tv': 0.5279503105590062, 'group0_tv': 0.5403726708074534, 'group1_tv': 0.515527950310559}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.09316770186335403, 'density_tv': 0.09006211180124224, 'group0_tv': 0.08074534161490683, 'group1_tv': 0.10559006211180125}
+    Constant velocity: {'group_density_tv': 0.40683229813664595, 'density_tv': 0.40683229813664595, 'group0_tv': 0.4720496894409938, 'group1_tv': 0.3416149068322981}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 19200, one-step RMSE: [2.8001987107815248e-08, 0.00046436661210489885, 0.5938466535429493]
+  One-step / autonomous / DEM rotational energy [J]: 5.10413756099945e-07 6.651118203092675e-07 5.123709586722395e-07
+  Elapsed [s]: 0.066000
+  Mixing [score, coverage], ML: (0.11355109536927721, 0.7515527950310559)
+  Mixing [score, coverage], DEM: (0.09619947829797149, 0.7546583850931677)
+  Rotational energy absolute error [J]: 1.52740861637028e-07
+Prediction 1320, DEM step 19200:
+Prediction 1320:
+  Model RMSE: [0.0003734700813948862, 0.021035484494070354, 26.51155232677614]
+  Constant velocity RMSE: [0.002831008000482847, 0.04673934730217336, 34.09235782278573]
+  Gravity only RMSE: [0.012031769483691357, 0.3707478983601818, 34.09235782278573]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.3617073228612429e-06, 6.651118203092675e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.4417223505197226e-06, 5.123709586722395e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.09937888198757763, 'density_tv': 0.09316770186335403, 'group0_tv': 0.08695652173913043, 'group1_tv': 0.11180124223602485}
+    Constant velocity: {'group_density_tv': 0.5217391304347826, 'density_tv': 0.5217391304347826, 'group0_tv': 0.5279503105590062, 'group1_tv': 0.515527950310559}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.09006211180124224, 'density_tv': 0.08695652173913043, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.10559006211180125}
+    Constant velocity: {'group_density_tv': 0.40683229813664595, 'density_tv': 0.40683229813664595, 'group0_tv': 0.4720496894409938, 'group1_tv': 0.3416149068322981}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 19400, one-step RMSE: [2.8091069508557134e-08, 0.000479604494983885, 0.48072533559686814]
+  One-step / autonomous / DEM rotational energy [J]: 4.468678118361929e-07 6.568971425213538e-07 4.476738639748422e-07
+  Elapsed [s]: 0.067000
+  Mixing [score, coverage], ML: (0.11402422493331588, 0.7484472049689441)
+  Mixing [score, coverage], DEM: (0.09656394166862137, 0.7515527950310559)
+  Rotational energy absolute error [J]: 2.0922327854651158e-07
+Prediction 1340, DEM step 19400:
+Prediction 1340:
+  Model RMSE: [0.00038093021719097086, 0.020574969133897093, 25.958070065790118]
+  Constant velocity RMSE: [0.0028735790331284074, 0.04714667197664495, 33.5895566272285]
+  Gravity only RMSE: [0.012402338188959517, 0.3764661805123601, 33.5895566272285]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.2987318194944253e-06, 6.568971425213538e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.4536331191814958e-06, 4.476738639748422e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.09627329192546584, 'density_tv': 0.09006211180124224, 'group0_tv': 0.09316770186335403, 'group1_tv': 0.09937888198757763}
+    Constant velocity: {'group_density_tv': 0.5217391304347826, 'density_tv': 0.5217391304347826, 'group0_tv': 0.5279503105590062, 'group1_tv': 0.515527950310559}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08385093167701864, 'density_tv': 0.08074534161490683, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.09316770186335403}
+    Constant velocity: {'group_density_tv': 0.4161490683229814, 'density_tv': 0.4161490683229814, 'group0_tv': 0.4720496894409938, 'group1_tv': 0.36024844720496896}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 19600, one-step RMSE: [2.69235182644856e-08, 0.0004356536320285546, 0.4845571660117442]
+  One-step / autonomous / DEM rotational energy [J]: 4.209025785139186e-07 6.41731544392471e-07 4.224059304987995e-07
+  Elapsed [s]: 0.068000
+  Mixing [score, coverage], ML: (0.11462471529212359, 0.7453416149068323)
+  Mixing [score, coverage], DEM: (0.0988286756143899, 0.7360248447204969)
+  Rotational energy absolute error [J]: 2.1932561389367155e-07
+Prediction 1360, DEM step 19600:
+Prediction 1360:
+  Model RMSE: [0.00038850775121889494, 0.01938581602000611, 25.826797172300832]
+  Constant velocity RMSE: [0.002916580110738126, 0.04733703307240242, 32.89904944169109]
+  Gravity only RMSE: [0.012778818949614554, 0.3820985961826491, 32.89904944169109]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.1818456120141956e-06, 6.41731544392471e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.475697593191959e-06, 4.224059304987995e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.09627329192546584, 'density_tv': 0.09006211180124224, 'group0_tv': 0.09316770186335403, 'group1_tv': 0.09937888198757763}
+    Constant velocity: {'group_density_tv': 0.5248447204968945, 'density_tv': 0.5248447204968945, 'group0_tv': 0.5341614906832298, 'group1_tv': 0.515527950310559}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08385093167701864, 'density_tv': 0.08074534161490683, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.09316770186335403}
+    Constant velocity: {'group_density_tv': 0.4161490683229814, 'density_tv': 0.4161490683229814, 'group0_tv': 0.4720496894409938, 'group1_tv': 0.36024844720496896}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 19800, one-step RMSE: [3.1399756607758274e-08, 0.0004984511284325216, 0.5925427087795554]
+  One-step / autonomous / DEM rotational energy [J]: 3.9691094640029423e-07 5.920180463257153e-07 3.9949334959425075e-07
+  Elapsed [s]: 0.069000
+  Mixing [score, coverage], ML: (0.1138831505906035, 0.7453416149068323)
+  Mixing [score, coverage], DEM: (0.0988286756143899, 0.7360248447204969)
+  Rotational energy absolute error [J]: 1.9252469673146459e-07
+Prediction 1380, DEM step 19800:
+Prediction 1380:
+  Model RMSE: [0.00039503201846968425, 0.018697942765608773, 25.301816394269682]
+  Constant velocity RMSE: [0.0029596759681371895, 0.04688636379625771, 32.84466768676622]
+  Gravity only RMSE: [0.01316061567762109, 0.3872517205184968, 32.84466768676622]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.085844032799778e-06, 5.920180463257153e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.352410574676549e-06, 3.9949334959425075e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.09627329192546584, 'density_tv': 0.09006211180124224, 'group0_tv': 0.09316770186335403, 'group1_tv': 0.09937888198757763}
+    Constant velocity: {'group_density_tv': 0.5372670807453416, 'density_tv': 0.5372670807453416, 'group0_tv': 0.5527950310559007, 'group1_tv': 0.5217391304347826}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08074534161490683, 'density_tv': 0.07763975155279502, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.08695652173913043}
+    Constant velocity: {'group_density_tv': 0.4254658385093168, 'density_tv': 0.4254658385093168, 'group0_tv': 0.484472049689441, 'group1_tv': 0.36645962732919257}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  DEM step 20000, one-step RMSE: [2.4541577619252083e-08, 0.0004205942259558411, 0.4643031836074641]
+  One-step / autonomous / DEM rotational energy [J]: 4.041642821520093e-07 5.663544113665087e-07 4.051048059782337e-07
+  Elapsed [s]: 0.070000
+  Mixing [score, coverage], ML: (0.11439479952803921, 0.7422360248447205)
+  Mixing [score, coverage], DEM: (0.09937142857142878, 0.7298136645962733)
+  Rotational energy absolute error [J]: 1.6124960538827502e-07
+Prediction 1400, DEM step 20000:
+Prediction 1400:
+  Model RMSE: [0.00040064822647223645, 0.018472394576997675, 24.851328994060445]
+  Constant velocity RMSE: [0.0030027198627078887, 0.046841620532608444, 33.153487628951645]
+  Gravity only RMSE: [0.013547795261971831, 0.39268587785328524, 33.153487628951645]
+  Model peak overlap [µm]: [52.413556333497134, 34.70741675371675]
+  Model kinetic energy [translation, rotation; J]: [1.0354734130382928e-06, 5.663544113665087e-07]
+  DEM kinetic energy [translation, rotation; J]: [1.357314865047921e-06, 4.051048059782337e-07]
+  Bin width 4 mm:
+    Model: {'group_density_tv': 0.10248447204968944, 'density_tv': 0.09627329192546584, 'group0_tv': 0.11180124223602485, 'group1_tv': 0.09316770186335403}
+    Constant velocity: {'group_density_tv': 0.5434782608695652, 'density_tv': 0.5434782608695652, 'group0_tv': 0.5590062111801242, 'group1_tv': 0.5279503105590062}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+  Bin width 5 mm:
+    Model: {'group_density_tv': 0.08074534161490683, 'density_tv': 0.07763975155279502, 'group0_tv': 0.07453416149068323, 'group1_tv': 0.08695652173913043}
+    Constant velocity: {'group_density_tv': 0.43167701863354035, 'density_tv': 0.43167701863354035, 'group0_tv': 0.4906832298136646, 'group1_tv': 0.37267080745341613}
+    Gravity only: {'group_density_tv': 1.0, 'density_tv': 1.0, 'group0_tv': 1.0, 'group1_tv': 1.0}
+Result: passed 1400 predictions

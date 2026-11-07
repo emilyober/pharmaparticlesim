@@ -4,6 +4,9 @@
 #include <iomanip>
 #include <stdexcept>
 #include <limits>
+#include <array>
+#include <chrono>
+#include <iostream>
 
 namespace {
     constexpr double PI = 3.1415926535897932;
@@ -162,51 +165,55 @@ void Simulator::buildCells() {
 
 void Simulator::computeContacts() {
     buildCells();
-    for (const auto& [cellKey, indices] : cells_){
-        const auto [cx,cy,cz] = cellKey;
-        for (std::size_t i : indices) {
-            Particle& p1 = particles_[i];
-            for (int dx = -1; dx <= 1; ++dx){
-                for (int dy = -1; dy<= 1; ++dy){
-                    for (int dz = -1; dz <= 1; dz++){
-                        const CellKey neighborKey{
-                            cx+dx,
-                            cy+dy,
-                            cz+dz
-                        };
-                        const auto neighbor = cells_.find(neighborKey);
-                        if (neighbor == cells_.end()){
-                            continue;
-                        }
-                        for (std::size_t j : neighbor->second){
-                            Particle& p2 = particles_[j];
-                            if (p2.id <= p1.id){
-                                continue;
-                            }
-                            const Vec3D separation = p2.position - p1.position;
-                            const double distance = norm(separation);
-                            const double overlap = p1.radius + p2.radius - distance;
-                            if (overlap <= 0.0){
-                                continue;
-                            }
-                            if (distance <= 1e-12){
-                                throw std::runtime_error("Particle centers coincide.");
-                            }
-                            const ContactKey key{p1.id,p2.id};
-                            auto [it,inserted] = particleContacts_.try_emplace(key);
-                            ContactState& state = it->second;
-                            if (inserted) {
-                                state.previousNormal = separation / distance;
-                            }
-                            state.lastSeenStep = stepIndex_;
-                            ContactModel::resolveContact(p1,p2,materials_,state,dt_);
-                        }
+    for (const auto& [cellKey, indices] : cells_) {
+        const auto [cx, cy, cz] = cellKey;
+        std::array<const std::vector<std::size_t>*,27> neighborLists{};
+        std::size_t neighborCount = 0;
+        for (int dx = -1; dx <= 1; ++dx) {
+            for (int dy = -1; dy <= 1; ++dy) {
+                for (int dz = -1; dz <= 1; ++dz) {
+                    const CellKey neighborKey{cx + dx, cy + dy, cz + dz};
+                    const auto neighbor = cells_.find(neighborKey);
+                    if (neighbor != cells_.end()) {
+                        neighborLists[neighborCount++] = &neighbor->second;
                     }
                 }
             }
         }
+        for (std::size_t i : indices) {
+            Particle& p1 = particles_[i];
+            for (std::size_t n = 0; n < neighborCount; ++n) {
+                for (std::size_t j : *neighborLists[n]) {
+                    Particle& p2 = particles_[j];
+                    if (p2.id <= p1.id) {
+                        continue;
+                    }
+                    const Vec3D separation = p2.position - p1.position;
+                    const double distanceSquared = norm2(separation);
+                    const double radiusSum = p1.radius + p2.radius;
+                    if (distanceSquared >= radiusSum * radiusSum) {
+                        continue;
+                    }
+                    const double distance = std::sqrt(distanceSquared);
+                    if (distance <= 1e-12) {
+                        throw std::runtime_error("Particle centers coincide.");
+                    }
+                    const double overlap = radiusSum - distance;
+                    if (overlap <= 0.0) {
+                        continue;
+                    }
+                    const ContactKey key{p1.id, p2.id};
+                    auto [it, inserted] = particleContacts_.try_emplace(key);
+                    ContactState& state = it->second;
+                    if (inserted) {
+                        state.previousNormal = separation / distance;
+                    }
+                    state.lastSeenStep = stepIndex_;
+                    ContactModel::resolveContact(p1,p2,materials_,state,dt_);
+                }
+            }
+        }
     }
-
     for (Particle& particle : particles_){
         for (const PlaneWall& wall : walls_){
             const double distanceToPlane = dot(particle.position - wall.point, wall.inwardNormal);
@@ -315,6 +322,23 @@ void Simulator::writeOutput(
     }
 }
 
+void Simulator::addRecordingWindow(std::size_t firstStep, std::size_t lastStep) {
+    if (firstStep > lastStep) {
+        throw std::invalid_argument("recodring window invalid.");
+    }
+    recordingWindows_.emplace_back(firstStep,lastStep);
+}
+
+void Simulator::setDuration(double duration) {
+    if (!std::isfinite(duration) || duration <= 0.0) {
+        throw std::invalid_argument(
+            "simulation duration must be finite and positive."
+        );
+    }
+
+    endTime_ = duration;
+}
+
 void Simulator::run(
     const std::string& outputFilename
 ) {
@@ -344,19 +368,44 @@ void Simulator::run(
         stepIndex_,
         static_cast<double>(stepIndex_) * dt_
     );
-    double elapsedTime = 0.0;
-    while (elapsedTime < endTime_){
+    const auto totalSteps = static_cast<std::size_t>(std::llround(endTime_ / dt_));
+
+    if (totalSteps == 0) {
+        throw std::invalid_argument("Duration must cover at least one simulation timestep.");
+    }
+    using Clock = std::chrono::steady_clock;
+    Clock::time_point benchmarkStart;
+    for (std::size_t iteration = 0; iteration < totalSteps; ++iteration) {
+        const bool benchmarkStep = stepIndex_ >= 6000 && stepIndex_ < 8000;
+        if (stepIndex_ == 6000) {
+            benchmarkStart = Clock::now();
+        }
         ++stepIndex_;
         resetForces();
         computeContacts();
         integrate();
+        if (stepIndex_ == 8000) {
+            const auto benchmarkEnd = Clock::now();
+            const double seconds = std::chrono::duration<double>(
+                benchmarkEnd - benchmarkStart
+            ).count();
 
-        elapsedTime += dt_;
+            std::cout << std::setprecision(10)
+                    << "DEM benchmark seconds: " << seconds << '\n';
+        }
 
         const double time = static_cast<double>(stepIndex_)*dt_;
-        if (stepIndex_ % outputEvery_ == 0 || elapsedTime >= endTime_){
-            writeOutput(file,stepIndex_,time);
-       
+        bool denseRecording = false;
+
+        for (const auto& [firstStep, lastStep] : recordingWindows_) {
+            if (stepIndex_ >= firstStep && stepIndex_ <= lastStep) {
+                denseRecording = true;
+                break;
+            }
+        }
+
+        if (!benchmarkStep && (denseRecording || stepIndex_ % outputEvery_ == 0 || iteration + 1 == totalSteps)) {
+            writeOutput(file, stepIndex_, time);
         }
     }
     file.flush();
