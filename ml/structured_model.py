@@ -86,8 +86,12 @@ class PairDecoder(nn.Module):
         nn.init.zeros_(self.output.bias)
         self.register_buffer("linear_scale",torch.tensor(float(linear_impulse_scale)))
         self.register_buffer("angular_scale",torch.tensor(float(angular_impulse_scale)))
-    def forward(self,embeddings,frames,positions,pairs):
+    def forward(self,embeddings,frames,positions,pairs,odd_b=None):
         coefficients = self.output(embeddings)
+        if odd_b is not None:
+            raw = coefficients.reshape(-1, 2, 6)
+            b = (raw[:, :, 2:] * odd_b[:, None, :]).sum(dim=-1)
+            coefficients = torch.stack((raw[:, :, 0], b, raw[:, :, 1]), dim=-1).flatten(1)
         linear_impulses = torch.einsum("pb,pbc->pc",coefficients[:,:3],frames)*self.linear_scale
         angular_impulses = torch.einsum("pb,pbc->pc",coefficients[:,3:],frames)*self.angular_scale
         i,j = pairs

@@ -7,13 +7,15 @@ from processor_model import ProcessorModel
 from rollout_eval import maximum_overlaps
 import argparse
 import json
+from graph import build_particle_edges, build_wall_ghosts, particle_edge_geometry
 
 root = Path(__file__).resolve().parent.parent
-checkpoint = torch.load(
-    root / "experiments/ml_runs/processor_data42_finetune_rollout8_matched997_v1_best.pt",
-    map_location="cpu",
-    weights_only=True,
+checkpoint_path = (
+    root / "experiments/ml_runs/"
+    "processor_data42_finetune_rollout4_swap_aware_matched997_v1_best.pt"
 )
+checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
+print(f"Checkpoint: {checkpoint_path.name}")
 
 model = ProcessorModel(
     masses=checkpoint["masses"],
@@ -23,7 +25,6 @@ model = ProcessorModel(
 model.load_state_dict(checkpoint["model_state"])
 model.eval()
 model.early_gate = True
-assert model.rounds == 1
 model.integration_reference_dt = 5e-6
 model.contact_position_fraction = checkpoint["contact_position_fraction"]
 print("Integration: gravity correction, reference_dt=5e-6")
@@ -59,6 +60,31 @@ def rmse(state, truth):
         .sqrt()
         .tolist()
     )
+
+def report_spin_by_slip(current, previous, prediction, truth, radii):
+    edges = build_particle_edges(current[:, :3], model.cutoff)
+    geometry = particle_edge_geometry(current, radii, edges)
+    touching = geometry["overlap"] > 0
+    senders, receivers = edges[:, touching]
+    slip = geometry["tangential_velocity"][touching].norm(dim=1)
+    degree = torch.bincount(senders, minlength=len(current))
+    walls = build_wall_ghosts(current, previous, radii)
+    at_wall = torch.zeros(len(current), dtype=torch.bool, device=current.device)
+    at_wall[walls["owners"][walls["gaps"] <= 0]] = True
+    isolated = ((degree[senders] == 1) & (degree[receivers] == 1) & ~at_wall[senders] & ~at_wall[receivers])
+    for label, mask in (
+        ("near-zero slip", slip <= 1e-4),
+        ("high slip", slip >= 1e-2),
+    ):
+        ids = senders[isolated & mask]
+        if ids.numel() == 0:
+            print(f"  {label}: 0 particles")
+            continue
+        error = prediction[ids, 6:9] - truth[ids, 6:9]
+        print(
+            f"  {label}: n={ids.numel()}, "
+            f"spin RMSE={error.square().mean().sqrt().item():.6g} rad/s"
+        )
 
 def kinetic_energy(state):
     velocity = state[:, 3:6].double()
@@ -149,7 +175,6 @@ def mixing_score(state,groups):
 
 with torch.no_grad():
     for start in starts:
-        stop = start + steps * horizon
         previous = data.state_at_step(start - horizon).clone()
         state = data.state_at_step(start).clone()
 
@@ -160,7 +185,7 @@ with torch.no_grad():
 
         limits = (2.0 * reference_peak).clamp_min(1e-6)
         print("Protocol: bulk_distribution_v1")
-        print("Full DEM peak overlaps [µm]:",(reference_peak * 1e6).tolist())
+        print("DEM guard reference peaks, steps 6000–16000:",(reference_peak * 1e6).tolist())
 
         constant = state.clone()
         ballistic = state.clone()
@@ -206,6 +231,13 @@ with torch.no_grad():
                         dense.state_at_step(current_step),
                         dense.state_at_step(history_step),
                     )
+                    report_spin_by_slip(
+                        dense.state_at_step(current_step),
+                        dense.state_at_step(history_step),
+                        one_step,
+                        truth,
+                        model.radii,
+                    )
                     print(f"  DEM step {target_step}, one-step RMSE:", rmse(one_step, truth))
                     print(
                         "  One-step / autonomous / DEM rotational energy [J]:",
@@ -221,7 +253,6 @@ with torch.no_grad():
                 dem_rot = kinetic_energy(truth)[1].item()
                 print("  Rotational energy absolute error [J]:", abs(ml_rot - dem_rot))
                 print(f"Prediction {step}, DEM step {target_step}:")
-                print(f"Prediction {step}:")
                 for label, candidate in [
                     ("Model", state),
                     ("Constant velocity", constant),

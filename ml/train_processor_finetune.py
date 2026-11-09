@@ -8,9 +8,11 @@ from torch.utils.data import ConcatDataset
 
 root = Path(__file__).resolve().parent.parent
 results = root / "experiments/results/local_timestepping"
-horizon = 10
-training_rollout_steps = 4
-training_seeds = [42]
+horizon = 20
+max_horizon = 20
+training_span_steps = 80
+training_rollout_steps = training_span_steps // horizon
+training_seeds = [42, 45, 46]
 
 train_runs = [
     FrameDataset(
@@ -23,53 +25,55 @@ train_runs = [
 val_data = FrameDataset(
     results / "pilot_seed43_10rpm_0p1s_dense.csv",
     horizon=horizon,
-    rollout_steps=2,
+    rollout_steps=1,
 )
 radii = train_runs[0].radii
 for run in train_runs + [val_data]:
     if not torch.equal(run.radii, radii):
         raise ValueError("Particle radii differ between runs")
 train_data = ConcatDataset(train_runs)
-generator = torch.Generator().manual_seed(42)
-selected = []
-offset = 0
-
-for run_number, run in enumerate(train_runs):
-    count = 1000 // len(train_runs)
-    if run_number < 1000 % len(train_runs):
-        count += 1
-
-    local_indices = torch.randperm(
-        len(run), generator=generator
-    )[:count]
-
-    selected.append(local_indices + offset)
-    offset += len(run)
 
 reference = torch.load(
     root / "experiments/ml_runs/processor_data_42_best.pt",
     map_location="cpu",
     weights_only=True,
 )
-longest_training_rollout = 8
-common_train_length = (
-    train_runs[0].num_frames - (longest_training_rollout + 1) * horizon
-)
-train_indices = reference["train_indices"].clone()
-train_indices = train_indices[train_indices < common_train_length]
-val_indices = reference["val_indices"].clone()
+parent_horizon = reference["horizon"]
+seed42_steps = reference["train_indices"] + parent_horizon
+seed42_steps = seed42_steps[
+    (seed42_steps >= max_horizon)
+    & (seed42_steps + training_span_steps < train_runs[0].num_frames)
+]
 
-if train_indices.max().item() >= len(train_data):
-    raise ValueError("Training indices exceed four-step dataset")
+parts = []
+offset = 0
+for seed, run in zip(training_seeds, train_runs):
+    if seed == 42:
+        current_steps = seed42_steps
+    else:
+        candidates = torch.arange(
+            max_horizon, run.num_frames - training_span_steps
+        )
+        generator = torch.Generator().manual_seed(seed)
+        order = torch.randperm(len(candidates), generator=generator)
+        current_steps = candidates[order[:len(seed42_steps)]]
 
-if val_indices.max().item() >= len(val_data):
-    raise ValueError("Validation indices exceed dataset")
+    parts.append(current_steps - horizon + offset)
+    offset += len(run)
+
+train_indices = torch.cat(parts)
+
+val_steps = reference["val_indices"] + parent_horizon
+val_steps = val_steps[
+    (val_steps >= max_horizon)
+    & (val_steps + max_horizon < val_data.num_frames)
+]
+val_indices = val_steps - horizon
 config = dict(reference["config"])
+config["step_dt"] = horizon * 5e-6
+config["swap_aware_pairs"] = True
 loss_scale = reference["loss_scale"].clone()
 masses = reference["masses"].clone()
-
-if reference["horizon"] != horizon:
-    raise ValueError("Reference horizon differs")
 
 if not torch.equal(reference["radii"], radii):
     raise ValueError("Reference radii differ")
@@ -89,7 +93,15 @@ with torch.no_grad():
         decoder.angular_scale.copy_(
             model.inertias.mean() * loss_scale[6]
         )
-model.load_state_dict(reference["model_state"])
+state_dict = dict(reference["model_state"])
+for name in ("decoder.output.weight", "decoder.output.bias"):
+    old = state_dict[name]
+    expanded = old.new_zeros((12, *old.shape[1:]))
+    expanded[:3] = old[[0, 2, 1]]
+    expanded[6:9] = old[[3, 5, 4]]
+    state_dict[name] = expanded
+
+model.load_state_dict(state_dict)
 
 model.integration_reference_dt = reference["integration_reference_dt"]
 model.contact_position_fraction = 1.0
@@ -120,9 +132,9 @@ checkpoint_dir = root / "experiments/ml_runs"
 checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
 best_rollout = float("inf")
-rollout_starts = [2000, 6000, 10000, 14000, 18000]
-rollout_steps = 50
-run_name = f"processor_data42_finetune_rollout{training_rollout_steps}_matched997_v1"
+rollout_starts = [2000, 6000, 10000, 14000]
+rollout_steps = 4000 // horizon
+run_name = "processor_data42_45_46_swap_aware_h20_pushforward_val20ms_v1"
 latest_path = checkpoint_dir / f"{run_name}_latest.pt"
 start_epoch = 0
 
@@ -144,13 +156,29 @@ for epoch in range(start_epoch,5):
         previous = example["previous"]
         state = example["current"]
         optimizer.zero_grad()
-        step_losses = []
-        for target in example["targets"]:
-            prediction = model(state,previous)
-            step_loss = ((prediction - target) / loss_scale).square().mean()
-            step_losses.append(step_loss)
-            previous,state = state, prediction
-        loss = torch.stack(step_losses).mean()
+        targets = example["targets"]
+
+        first_prediction = model(state, previous)
+        clean_loss = (
+            (first_prediction - targets[0]) / loss_scale
+        ).square().mean()
+
+        # Reuse prediction 1, then generate predictions 2 and 3
+        # without backpropagating through the warmup trajectory.
+        with torch.no_grad():
+            warm_previous = state
+            warm_state = first_prediction.detach()
+            for _ in range(len(targets) - 2):
+                warm_previous, warm_state = (
+                    warm_state, model(warm_state, warm_previous)
+                )
+
+        final_prediction = model(warm_state, warm_previous)
+        pushforward_loss = (
+            (final_prediction - targets[-1]) / loss_scale
+        ).square().mean()
+
+        loss = 0.5 * (clean_loss + pushforward_loss)
         if not torch.isfinite(loss):
             raise RuntimeError("Nonfinite training loss")
         loss.backward()
