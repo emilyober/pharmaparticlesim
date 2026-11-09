@@ -1,0 +1,48 @@
+Epoch 1: train=1.408027, val=0.356405
+Model: loss=0.356405, position/velocity/spin=[0.0005236664437688887, 0.1619168221950531, 0.9067745208740234]
+Constant velocity: loss=0.713220, position/velocity/spin=[0.0007262253202497959, 1.0801957845687866, 1.0587387084960938]
+Gravity only: loss=0.718741, position/velocity/spin=[0.0007372897234745324, 1.0967472791671753, 1.0587387084960938]
+Rollout start=2000: train_rollout8=1.408027, val_one_step=0.356405completed=400/400, failure=None, peak particle/wall µm=[76.20246237435477, 58.29184968903292]
+Rollout start=6000: train_rollout8=1.408027, val_one_step=0.356405completed=400/400, failure=None, peak particle/wall µm=[55.410541243167565, 33.610142346998664]
+Rollout start=10000: train_rollout8=1.408027, val_one_step=0.356405completed=400/400, failure=None, peak particle/wall µm=[40.69606643170671, 23.91845113735788]
+Rollout start=14000: train_rollout8=1.408027, val_one_step=0.356405completed=400/400, failure=None, peak particle/wall µm=[41.26752274752256, 28.49732721636744]
+Rollout eligible=True, score=186.04888553745914
+Saved best screened rollout checkpoint
+Epoch 2: train=1.321690, val=0.389037
+Model: loss=0.389037, position/velocity/spin=[0.000577630300540477, 0.16408580541610718, 1.0024466514587402]
+Constant velocity: loss=0.713220, position/velocity/spin=[0.0007262253202497959, 1.0801957845687866, 1.0587387084960938]
+Gravity only: loss=0.718741, position/velocity/spin=[0.0007372897234745324, 1.0967472791671753, 1.0587387084960938]
+Rollout start=2000: train_rollout8=1.321690, val_one_step=0.389037completed=400/400, failure=None, peak particle/wall µm=[73.61102652422456, 51.754526770010635]
+Rollout start=6000: train_rollout8=1.321690, val_one_step=0.389037completed=400/400, failure=None, peak particle/wall µm=[55.410541243167565, 31.897970055237007]
+Rollout start=10000: train_rollout8=1.321690, val_one_step=0.389037completed=400/400, failure=None, peak particle/wall µm=[41.21015476545378, 23.437432385770702]
+Rollout start=14000: train_rollout8=1.321690, val_one_step=0.389037completed=400/400, failure=None, peak particle/wall µm=[38.35699994732917, 26.466636432562197]
+Rollout eligible=True, score=167.5399281280855
+Saved best screened rollout checkpoint
+Epoch 3: train=1.266935, val=0.408446
+Model: loss=0.408446, position/velocity/spin=[0.000589743023738265, 0.1634288728237152, 1.0613206624984741]
+Constant velocity: loss=0.713220, position/velocity/spin=[0.0007262253202497959, 1.0801957845687866, 1.0587387084960938]
+Gravity only: loss=0.718741, position/velocity/spin=[0.0007372897234745324, 1.0967472791671753, 1.0587387084960938]
+Rollout start=2000: train_rollout8=1.266935, val_one_step=0.408446completed=400/400, failure=None, peak particle/wall µm=[75.94292894853339, 49.109758250127925]
+Rollout start=6000: train_rollout8=1.266935, val_one_step=0.408446completed=400/400, failure=None, peak particle/wall µm=[55.410541243167565, 32.17644258795768]
+Rollout start=10000: train_rollout8=1.266935, val_one_step=0.408446completed=400/400, failure=None, peak particle/wall µm=[39.335812224983606, 22.84350982700162]
+Rollout start=14000: train_rollout8=1.266935, val_one_step=0.408446completed=400/400, failure=None, peak particle/wall µm=[35.32796583667402, 27.191541853759105]
+Rollout eligible=True, score=168.0531717649827
+Epoch 4: train=1.228156, val=0.418499
+Model: loss=0.418499, position/velocity/spin=[0.0005997253465466201, 0.16176314651966095, 1.0931333303451538]
+Constant velocity: loss=0.713220, position/velocity/spin=[0.0007262253202497959, 1.0801957845687866, 1.0587387084960938]
+Gravity only: loss=0.718741, position/velocity/spin=[0.0007372897234745324, 1.0967472791671753, 1.0587387084960938]
+Rollout start=2000: train_rollout8=1.228156, val_one_step=0.418499completed=400/400, failure=None, peak particle/wall µm=[68.09277513758417, 50.695116391767655]
+Rollout start=6000: train_rollout8=1.228156, val_one_step=0.418499completed=400/400, failure=None, peak particle/wall µm=[55.410541243167565, 32.38967418741842]
+Rollout start=10000: train_rollout8=1.228156, val_one_step=0.418499completed=400/400, failure=None, peak particle/wall µm=[39.54847417305708, 23.437341448037664]
+Rollout start=14000: train_rollout8=1.228156, val_one_step=0.418499completed=400/400, failure=None, peak particle/wall µm=[31.817879500121993, 26.358033477922454]
+Rollout eligible=True, score=172.6836626859587
+Epoch 5: train=1.197268, val=0.425916
+Model: loss=0.425916, position/velocity/spin=[0.0005881931865587831, 0.15836001932621002, 1.118800163269043]
+Constant velocity: loss=0.713220, position/velocity/spin=[0.0007262253202497959, 1.0801957845687866, 1.0587387084960938]
+Gravity only: loss=0.718741, position/velocity/spin=[0.0007372897234745324, 1.0967472791671753, 1.0587387084960938]
+Rollout start=2000: train_rollout8=1.197268, val_one_step=0.425916completed=400/400, failure=None, peak particle/wall µm=[67.2047378783246, 49.439047974653846]
+Rollout start=6000: train_rollout8=1.197268, val_one_step=0.425916completed=400/400, failure=None, peak particle/wall µm=[55.410541243167565, 32.7316514158113]
+Rollout start=10000: train_rollout8=1.197268, val_one_step=0.425916completed=400/400, failure=None, peak particle/wall µm=[37.187854334328264, 22.00215511717965]
+Rollout start=14000: train_rollout8=1.197268, val_one_step=0.425916completed=400/400, failure=None, peak particle/wall µm=[32.66691253233072, 26.200253168337518]
+Rollout eligible=True, score=159.01872879968724
+Saved best screened rollout checkpoint

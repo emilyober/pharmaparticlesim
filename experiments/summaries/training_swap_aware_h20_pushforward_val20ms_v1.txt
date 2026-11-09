@@ -1,0 +1,45 @@
+Epoch 1: train=3.246528, val=1.131883
+Model: loss=1.131883, position/velocity/spin=[0.00586644746363163, 1.263856053352356, 2.1259255409240723]
+Constant velocity: loss=2.725398, position/velocity/spin=[0.010262834839522839, 4.134012222290039, 4.031919002532959]
+Gravity only: loss=2.747658, position/velocity/spin=[0.010423916392028332, 4.2006306648254395, 4.031919002532959]
+Rollout start=2000: train_rollout4=3.246528, val_one_step=1.131883completed=166/200, failure=overlap screening limit exceeded, peak particle/wall µm=[76.76856241641407, 80.47231361289764]
+Rollout start=6000: train_rollout4=3.246528, val_one_step=1.131883completed=200/200, failure=None, peak particle/wall µm=[60.372168285977324, 46.74281727922933]
+Rollout start=10000: train_rollout4=3.246528, val_one_step=1.131883completed=200/200, failure=None, peak particle/wall µm=[53.6781241406764, 31.46561660568453]
+Rollout start=14000: train_rollout4=3.246528, val_one_step=1.131883completed=200/200, failure=None, peak particle/wall µm=[58.9619211843835, 40.146093380467875]
+Rollout eligible=False, score=inf
+Epoch 2: train=2.999857, val=1.118997
+Model: loss=1.118997, position/velocity/spin=[0.006116807926446199, 1.221887230873108, 2.1289870738983154]
+Constant velocity: loss=2.725398, position/velocity/spin=[0.010262834839522839, 4.134012222290039, 4.031919002532959]
+Gravity only: loss=2.747658, position/velocity/spin=[0.010423916392028332, 4.2006306648254395, 4.031919002532959]
+Rollout start=2000: train_rollout4=2.999857, val_one_step=1.118997completed=177/200, failure=overlap screening limit exceeded, peak particle/wall µm=[121.42842227314486, 78.98846397425343]
+Rollout start=6000: train_rollout4=2.999857, val_one_step=1.118997completed=200/200, failure=None, peak particle/wall µm=[60.48990737848761, 42.749244040640036]
+Rollout start=10000: train_rollout4=2.999857, val_one_step=1.118997completed=200/200, failure=None, peak particle/wall µm=[53.150895746593726, 26.317979402026154]
+Rollout start=14000: train_rollout4=2.999857, val_one_step=1.118997completed=200/200, failure=None, peak particle/wall µm=[53.3386056747946, 37.87110626503679]
+Rollout eligible=False, score=inf
+Epoch 3: train=2.866464, val=1.103246
+Model: loss=1.103246, position/velocity/spin=[0.006239582318812609, 1.1751023530960083, 2.1283950805664062]
+Constant velocity: loss=2.725398, position/velocity/spin=[0.010262834839522839, 4.134012222290039, 4.031919002532959]
+Gravity only: loss=2.747658, position/velocity/spin=[0.010423916392028332, 4.2006306648254395, 4.031919002532959]
+Rollout start=2000: train_rollout4=2.866464, val_one_step=1.103246completed=175/200, failure=overlap screening limit exceeded, peak particle/wall µm=[111.1199452553278, 81.98846719796246]
+Rollout start=6000: train_rollout4=2.866464, val_one_step=1.103246completed=200/200, failure=None, peak particle/wall µm=[59.472133093084594, 42.312477274351195]
+Rollout start=10000: train_rollout4=2.866464, val_one_step=1.103246completed=200/200, failure=None, peak particle/wall µm=[48.396617889591305, 28.535531464660146]
+Rollout start=14000: train_rollout4=2.866464, val_one_step=1.103246completed=200/200, failure=None, peak particle/wall µm=[52.21630342055572, 37.98254655385316]
+Rollout eligible=False, score=inf
+Epoch 4: train=2.752602, val=1.104069
+Model: loss=1.104069, position/velocity/spin=[0.0064969188533723354, 1.146579623222351, 2.159130096435547]
+Constant velocity: loss=2.725398, position/velocity/spin=[0.010262834839522839, 4.134012222290039, 4.031919002532959]
+Gravity only: loss=2.747658, position/velocity/spin=[0.010423916392028332, 4.2006306648254395, 4.031919002532959]
+Rollout start=2000: train_rollout4=2.752602, val_one_step=1.104069completed=176/200, failure=overlap screening limit exceeded, peak particle/wall µm=[97.46913007019093, 78.8665835049114]
+Rollout start=6000: train_rollout4=2.752602, val_one_step=1.104069completed=200/200, failure=None, peak particle/wall µm=[58.28624625320213, 41.46459110080173]
+Rollout start=10000: train_rollout4=2.752602, val_one_step=1.104069completed=200/200, failure=None, peak particle/wall µm=[45.61640347906185, 26.72572950615862]
+Rollout start=14000: train_rollout4=2.752602, val_one_step=1.104069completed=200/200, failure=None, peak particle/wall µm=[45.74580621948205, 34.30495506655598]
+Rollout eligible=False, score=inf
+Epoch 5: train=2.649858, val=1.082061
+Model: loss=1.082061, position/velocity/spin=[0.006338374689221382, 1.099198818206787, 2.1406450271606445]
+Constant velocity: loss=2.725398, position/velocity/spin=[0.010262834839522839, 4.134012222290039, 4.031919002532959]
+Gravity only: loss=2.747658, position/velocity/spin=[0.010423916392028332, 4.2006306648254395, 4.031919002532959]
+Rollout start=2000: train_rollout4=2.649858, val_one_step=1.082061completed=187/200, failure=overlap screening limit exceeded, peak particle/wall µm=[135.21857961751013, 71.03758850460565]
+Rollout start=6000: train_rollout4=2.649858, val_one_step=1.082061completed=200/200, failure=None, peak particle/wall µm=[57.469728982536324, 40.27471282180839]
+Rollout start=10000: train_rollout4=2.649858, val_one_step=1.082061completed=200/200, failure=None, peak particle/wall µm=[44.0792289346445, 24.673565812857735]
+Rollout start=14000: train_rollout4=2.649858, val_one_step=1.082061completed=200/200, failure=None, peak particle/wall µm=[48.39046998768954, 34.97754189860092]
+Rollout eligible=False, score=inf
