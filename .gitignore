@@ -102,3 +102,6 @@ Thumbs.db
 
 # LAMMPS trajectories
 *.lammpstrj
+
+__pycache__/
+*.pyc

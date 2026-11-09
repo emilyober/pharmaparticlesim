@@ -111,6 +111,8 @@ They are not results for completed 50-prediction rollouts.
 
 No checkpoint qualified under the screening rule.
 
+The multi-round experiment did not demonstrate a speedup. A separate single-round configuration later measured a 1.264× CPU speedup over a 10 ms development window. See [the benchmark note](benchmark_early_gate_ghosts.md) for the setup and limits.
+
 ## Interpretation
 
 - Training showed large spikes rather than a smooth overfitting trend.
