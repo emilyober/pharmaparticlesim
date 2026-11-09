@@ -9,7 +9,7 @@ from torch.utils.data import ConcatDataset
 root = Path(__file__).resolve().parent.parent
 results = root / "experiments/results/local_timestepping"
 horizon = 10
-training_rollout_steps = 4
+training_rollout_steps = 8
 training_seeds = [42]
 
 train_runs = [
@@ -30,21 +30,6 @@ for run in train_runs + [val_data]:
     if not torch.equal(run.radii, radii):
         raise ValueError("Particle radii differ between runs")
 train_data = ConcatDataset(train_runs)
-generator = torch.Generator().manual_seed(42)
-selected = []
-offset = 0
-
-for run_number, run in enumerate(train_runs):
-    count = 1000 // len(train_runs)
-    if run_number < 1000 % len(train_runs):
-        count += 1
-
-    local_indices = torch.randperm(
-        len(run), generator=generator
-    )[:count]
-
-    selected.append(local_indices + offset)
-    offset += len(run)
 
 reference = torch.load(
     root / "experiments/ml_runs/processor_data_42_best.pt",
@@ -65,6 +50,7 @@ if train_indices.max().item() >= len(train_data):
 if val_indices.max().item() >= len(val_data):
     raise ValueError("Validation indices exceed dataset")
 config = dict(reference["config"])
+config["swap_aware_pairs"] = True
 loss_scale = reference["loss_scale"].clone()
 masses = reference["masses"].clone()
 
@@ -89,7 +75,15 @@ with torch.no_grad():
         decoder.angular_scale.copy_(
             model.inertias.mean() * loss_scale[6]
         )
-model.load_state_dict(reference["model_state"])
+state_dict = dict(reference["model_state"])
+for name in ("decoder.output.weight", "decoder.output.bias"):
+    old = state_dict[name]
+    expanded = old.new_zeros((12, *old.shape[1:]))
+    expanded[:3] = old[[0, 2, 1]]
+    expanded[6:9] = old[[3, 5, 4]]
+    state_dict[name] = expanded
+
+model.load_state_dict(state_dict)
 
 model.integration_reference_dt = reference["integration_reference_dt"]
 model.contact_position_fraction = 1.0
@@ -122,7 +116,7 @@ checkpoint_dir.mkdir(parents=True, exist_ok=True)
 best_rollout = float("inf")
 rollout_starts = [2000, 6000, 10000, 14000, 18000]
 rollout_steps = 50
-run_name = f"processor_data42_finetune_rollout{training_rollout_steps}_matched997_v1"
+run_name = "processor_data42_finetune_rollout8_swap_aware_matched997_v1"
 latest_path = checkpoint_dir / f"{run_name}_latest.pt"
 start_epoch = 0
 
